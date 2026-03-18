@@ -5,7 +5,7 @@ import { copy } from "@/lib/i18n";
 import { useLang } from "@/lib/client";
 
 export function TopNav({ active }: { active: "home" | "tarot" | "career" | "face" | "palm" | "stories" | "insights" }) {
-  const { lang, toggleLang } = useLang();
+  const { lang, setLang } = useLang();
   const t = copy[lang];
 
   return (
@@ -19,9 +19,18 @@ export function TopNav({ active }: { active: "home" | "tarot" | "career" | "face
         <Link href="/palm" className={active === "palm" ? "navLink active" : "navLink"}>{t.nav.palm}</Link>
         <Link href="/stories" className={active === "stories" || active === "insights" ? "navLink active" : "navLink"}>{t.nav.stories}</Link>
       </nav>
-      <button className="langSwitch" type="button" onClick={toggleLang}>
-        {lang === "en" ? "中文" : "EN"}
-      </button>
+      <div className="langSelectWrap">
+        <label htmlFor="language-select" className="srOnly">{lang === "zh" ? "语言" : "Language"}</label>
+        <select
+          id="language-select"
+          className="langSelect"
+          value={lang}
+          onChange={(event) => setLang(event.target.value as "en" | "zh")}
+        >
+          <option value="zh">{lang === "zh" ? "中文" : "Chinese"}</option>
+          <option value="en">{lang === "zh" ? "英文" : "English"}</option>
+        </select>
+      </div>
     </header>
   );
 }
