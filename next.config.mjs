@@ -1,10 +1,7 @@
-import path from "node:path";
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   distDir: process.env.NODE_ENV === "development" ? ".next-dev" : ".next",
-  outputFileTracingRoot: path.join(process.cwd(), ".."),
   async headers() {
     return [
       {
