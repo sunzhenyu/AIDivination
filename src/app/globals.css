@@ -1273,6 +1273,11 @@ textarea:focus {
   padding: 14px;
 }
 
+.contactCol {
+  display: flex;
+  flex-direction: column;
+}
+
 .footerCol h4 {
   margin: 0 0 10px;
   font-size: 13px;
@@ -1281,7 +1286,7 @@ textarea:focus {
   color: #67c5ff;
 }
 
-.footerCol a,
+.footerCol a:not(.footerIconLink),
 .footerTextItem {
   display: block;
   margin: 0;
@@ -1291,7 +1296,43 @@ textarea:focus {
   text-decoration: none;
 }
 
-.footerCol a:hover {
+.footerCol a:not(.footerIconLink):hover {
+  color: #fff6de;
+}
+
+.footerIconLinks {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+}
+
+.footerCol a.footerIconLink {
+  display: inline-flex;
+  width: 46px;
+  height: 46px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+  color: #e4efff;
+  line-height: 1;
+  text-decoration: none;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.footerIconLink svg {
+  width: 21px;
+  height: 21px;
+  display: block;
+}
+
+.footerCol a.footerIconLink:hover {
+  transform: translateY(-1px) scale(1.03);
+  border-color: rgba(248, 190, 106, 0.6);
+  background: rgba(248, 190, 106, 0.15);
   color: #fff6de;
 }
 
