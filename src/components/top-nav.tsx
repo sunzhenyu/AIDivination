@@ -10,14 +10,14 @@ export function TopNav({ active }: { active: "home" | "tarot" | "career" | "face
 
   return (
     <header className="topNav">
-      <Link href="/" className="brand">{t.brand}</Link>
+      <Link href="/" className="brand" title={lang === "zh" ? "返回 AI Divination 首页" : "Go to AI Divination home page"}>{t.brand}</Link>
       <nav className="navLinks">
-        <Link href="/" className={active === "home" ? "navLink active" : "navLink"}>{t.nav.home}</Link>
-        <Link href="/tarot" className={active === "tarot" ? "navLink active" : "navLink"}>{t.nav.tarot}</Link>
-        <Link href="/career" className={active === "career" ? "navLink active" : "navLink"}>{t.nav.career}</Link>
-        <Link href="/face" className={active === "face" ? "navLink active" : "navLink"}>{t.nav.face}</Link>
-        <Link href="/palm" className={active === "palm" ? "navLink active" : "navLink"}>{t.nav.palm}</Link>
-        <Link href="/stories" className={active === "stories" || active === "insights" ? "navLink active" : "navLink"}>{t.nav.stories}</Link>
+        <Link href="/" title={lang === "zh" ? "进入首页" : "Go to Home"} className={active === "home" ? "navLink active" : "navLink"}>{t.nav.home}</Link>
+        <Link href="/tarot" title={lang === "zh" ? "进入塔罗 AI 占卜页面" : "Open Tarot AI divination page"} className={active === "tarot" ? "navLink active" : "navLink"}>{t.nav.tarot}</Link>
+        <Link href="/career" title={lang === "zh" ? "进入职业 AI 占卜页面" : "Open Career AI divination page"} className={active === "career" ? "navLink active" : "navLink"}>{t.nav.career}</Link>
+        <Link href="/face" title={lang === "zh" ? "进入面相 AI 占卜页面" : "Open Face AI divination page"} className={active === "face" ? "navLink active" : "navLink"}>{t.nav.face}</Link>
+        <Link href="/palm" title={lang === "zh" ? "进入手相 AI 占卜页面" : "Open Palm AI divination page"} className={active === "palm" ? "navLink active" : "navLink"}>{t.nav.palm}</Link>
+        <Link href="/stories" title={lang === "zh" ? "进入故事专栏" : "Open story library"} className={active === "stories" || active === "insights" ? "navLink active" : "navLink"}>{t.nav.stories}</Link>
       </nav>
       <div className="langSelectWrap">
         <label htmlFor="language-select" className="srOnly">{lang === "zh" ? "语言" : "Language"}</label>

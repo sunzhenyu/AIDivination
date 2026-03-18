@@ -2,7 +2,7 @@ export default function Head() {
   return (
     <>
       <meta name="robots" content="noindex, nofollow" />
-      <link rel="canonical" href="https://www.aidivination.app/career/result" />
+      <link rel="canonical" href="https://aidivination.net/career/result" />
     </>
   );
 }

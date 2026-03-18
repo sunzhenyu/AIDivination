@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { LangProvider } from "@/lib/client";
 import { SiteFooter } from "@/components/site-footer";
-import { SITE_NAME, SITE_URL } from "@/lib/seo";
+import { SITE_NAME, SITE_URL, SOCIAL_IMAGE_URL, absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -34,13 +34,16 @@ export const metadata: Metadata = {
     title: "AI Divination - Tarot, Career, Face & Palm Readings",
     description:
       "AI Divination offers tarot, career, face, and palm readings with multilingual guidance, shareable results, and practical next-step insights for daily reflection.",
-    url: SITE_URL,
+    url: absoluteUrl("/"),
     siteName: SITE_NAME,
+    images: [{ url: SOCIAL_IMAGE_URL }],
     type: "website"
   },
   twitter: {
     card: "summary_large_image",
     title: "AI Divination - Tarot, Career, Face & Palm Readings",
+    site: "@DanDan344479",
+    images: [SOCIAL_IMAGE_URL],
     description:
       "AI Divination offers tarot, career, face, and palm readings with multilingual guidance, shareable results, and practical next-step insights for daily reflection."
   },

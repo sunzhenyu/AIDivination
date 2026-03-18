@@ -62,7 +62,7 @@ export function StoriesPageClient({ initialPage }: { initialPage: number }) {
                 <span className="storyCardBadge">{modeTag[lang][item.mode]}</span>
                 <h2>{content.title}</h2>
                 <p>{content.teaser}</p>
-                <Link className="btn" href={`/stories/${item.slug}`}>
+                <Link className="btn" title={lang === "zh" ? `进入故事详情：${content.title}` : `Open story detail: ${content.title}`} href={`/stories/${item.slug}`}>
                   {lang === "zh" ? "进入故事" : "Read Story"}
                 </Link>
               </article>
@@ -72,6 +72,7 @@ export function StoriesPageClient({ initialPage }: { initialPage: number }) {
         <div className="paginationRow">
           <Link
             href={`/stories?page=${Math.max(1, currentPage - 1)}`}
+            title={lang === "zh" ? "切换到上一页故事" : "Go to previous story page"}
             className={`btn secondary ${currentPage === 1 ? "isDisabled" : ""}`}
             aria-disabled={currentPage === 1}
             tabIndex={currentPage === 1 ? -1 : undefined}
@@ -83,6 +84,7 @@ export function StoriesPageClient({ initialPage }: { initialPage: number }) {
           </div>
           <Link
             href={`/stories?page=${Math.min(totalPages, currentPage + 1)}`}
+            title={lang === "zh" ? "切换到下一页故事" : "Go to next story page"}
             className={`btn secondary ${currentPage === totalPages ? "isDisabled" : ""}`}
             aria-disabled={currentPage === totalPages}
             tabIndex={currentPage === totalPages ? -1 : undefined}
