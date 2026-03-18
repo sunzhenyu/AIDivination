@@ -564,6 +564,80 @@ body {
   margin: 0 0 22px;
 }
 
+.storyStrip {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.storyMiniCard {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  background: linear-gradient(165deg, rgba(22, 40, 70, 0.72), rgba(12, 25, 46, 0.62));
+  padding: 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.storyMiniMeta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.storyMiniMeta span {
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid rgba(103, 197, 255, 0.35);
+  color: #67c5ff;
+  background: rgba(18, 38, 65, 0.55);
+}
+
+.storyMiniCard h3 {
+  margin: 0;
+  color: #fff7ea;
+  line-height: 1.38;
+  font-size: 1.1rem;
+}
+
+.storyMiniCard p {
+  margin: 0;
+  color: #c4d3e9;
+  line-height: 1.72;
+}
+
+.storyMiniLink {
+  color: #f8be6a;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.storyMiniLink:hover {
+  color: #fff6de;
+}
+
+.paginationRow {
+  display: grid;
+  grid-template-columns: minmax(120px, 220px) 1fr minmax(120px, 220px);
+  gap: 12px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.paginationInfo {
+  text-align: center;
+  color: #c9d8ec;
+  font-weight: 700;
+}
+
+.isDisabled {
+  pointer-events: none;
+  opacity: 0.45;
+}
+
 .insightList {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -571,12 +645,30 @@ body {
 }
 
 .insightCard {
+  position: relative;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 22px;
   background: linear-gradient(165deg, rgba(22, 40, 70, 0.72), rgba(12, 25, 46, 0.62));
   padding: 20px;
   display: grid;
   gap: 12px;
+}
+
+.storyCardBadge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #67c5ff;
+  border: 1px solid rgba(103, 197, 255, 0.4);
+  background: rgba(12, 29, 52, 0.75);
+}
+
+.insightCard h2 {
+  padding-right: 160px;
 }
 
 .insightCardTop {
@@ -654,6 +746,11 @@ body {
 
 .insightBody p + p {
   margin-top: 8px;
+}
+
+.storyTakeaway {
+  border-color: rgba(248, 190, 106, 0.5) !important;
+  background: linear-gradient(150deg, rgba(248, 190, 106, 0.14), rgba(255, 122, 107, 0.08)) !important;
 }
 
 .btn {
@@ -1243,6 +1340,18 @@ textarea:focus {
 
   .insightList {
     grid-template-columns: 1fr;
+  }
+
+  .storyStrip {
+    grid-template-columns: 1fr;
+  }
+
+  .paginationRow {
+    grid-template-columns: 1fr;
+  }
+
+  .insightCard h2 {
+    padding-right: 0;
   }
 
   .resultActions {

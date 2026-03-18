@@ -6,7 +6,7 @@ export const STORAGE_KEY = "aidivination-language";
 export const copy = {
   en: {
     brand: "AI Divination",
-    nav: { home: "Home", tarot: "Tarot", career: "Career", face: "Face", palm: "Palm", insights: "Stories" },
+    nav: { home: "Home", tarot: "Tarot", career: "Career", face: "Face", palm: "Palm", stories: "Stories", insights: "Stories" },
     common: {
       start: "Start",
       backHome: "Back to Home",
@@ -45,7 +45,7 @@ export const copy = {
   },
   zh: {
     brand: "AI Divination",
-    nav: { home: "首页", tarot: "塔罗", career: "职业", face: "面相", palm: "手相", insights: "洞察" },
+    nav: { home: "首页", tarot: "塔罗", career: "职业", face: "面相", palm: "手相", stories: "故事", insights: "故事" },
     common: {
       start: "开始",
       backHome: "返回首页",
@@ -75,7 +75,7 @@ export const copy = {
       helpTitle: "帮助中心",
       guide: "新手引导",
       faq: "常见问题",
-      articles: "洞察专栏",
+      articles: "故事专栏",
       legalTitle: "法律信息",
       privacy: "隐私政策",
       terms: "服务条款",

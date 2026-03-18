@@ -27,7 +27,7 @@ export function SiteFooter() {
             <h4>{t.helpTitle}</h4>
             <Link href="/help#getting-started">{t.guide}</Link>
             <Link href="/help#faq">{t.faq}</Link>
-            <Link href="/insights">{t.articles}</Link>
+            <Link href="/stories">{t.articles}</Link>
           </div>
           <div className="footerCol">
             <h4>{t.legalTitle}</h4>

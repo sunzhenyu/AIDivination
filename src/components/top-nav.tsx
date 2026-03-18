@@ -4,7 +4,7 @@ import Link from "next/link";
 import { copy } from "@/lib/i18n";
 import { useLang } from "@/lib/client";
 
-export function TopNav({ active }: { active: "home" | "tarot" | "career" | "face" | "palm" | "insights" }) {
+export function TopNav({ active }: { active: "home" | "tarot" | "career" | "face" | "palm" | "stories" | "insights" }) {
   const { lang, toggleLang } = useLang();
   const t = copy[lang];
 
@@ -17,7 +17,7 @@ export function TopNav({ active }: { active: "home" | "tarot" | "career" | "face
         <Link href="/career" className={active === "career" ? "navLink active" : "navLink"}>{t.nav.career}</Link>
         <Link href="/face" className={active === "face" ? "navLink active" : "navLink"}>{t.nav.face}</Link>
         <Link href="/palm" className={active === "palm" ? "navLink active" : "navLink"}>{t.nav.palm}</Link>
-        <Link href="/insights" className={active === "insights" ? "navLink active" : "navLink"}>{t.nav.insights}</Link>
+        <Link href="/stories" className={active === "stories" || active === "insights" ? "navLink active" : "navLink"}>{t.nav.stories}</Link>
       </nav>
       <button className="langSwitch" type="button" onClick={toggleLang}>
         {lang === "en" ? "中文" : "EN"}

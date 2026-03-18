@@ -68,6 +68,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="en">
+      <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q89M15NCLE" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-Q89M15NCLE');
+            `
+          }}
+        />
+      </head>
       <body className="appBody">
         <LangProvider>
           {process.env.NODE_ENV === "development" ? (

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { insights } from "@/lib/insights";
+import { stories } from "@/lib/stories";
 import { SITE_URL } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -12,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/help",
     "/privacy",
     "/terms",
+    "/stories",
     "/insights",
     "/llms.txt"
   ];
@@ -30,5 +32,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7
   }));
 
-  return [...staticEntries, ...articleEntries];
+  const storyEntries: MetadataRoute.Sitemap = stories.map((item) => ({
+    url: `${SITE_URL}/stories/${item.slug}`,
+    lastModified: new Date(item.publishedAt),
+    changeFrequency: "monthly",
+    priority: 0.75
+  }));
+
+  return [...staticEntries, ...storyEntries, ...articleEntries];
 }

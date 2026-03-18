@@ -8,6 +8,7 @@ export async function GET() {
 - https://www.aidivination.app/career: Career AI divination experience
 - https://www.aidivination.app/face: Face AI divination experience
 - https://www.aidivination.app/palm: Palm AI divination experience
+- https://www.aidivination.app/stories: Eastern and Western themed story library
 - https://www.aidivination.app/insights: Mode stories and explainers
 - https://www.aidivination.app/help: Product usage support
 

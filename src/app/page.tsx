@@ -4,6 +4,7 @@ import Link from "next/link";
 import { TopNav } from "@/components/top-nav";
 import { useLang } from "@/lib/client";
 import { copy } from "@/lib/i18n";
+import { stories } from "@/lib/stories";
 
 export default function HomePage() {
   const { lang } = useLang();
@@ -19,6 +20,7 @@ export default function HomePage() {
         { label: "Use cases", value: "Career, social, content, self-discovery" },
         { label: "Experience style", value: "Lightweight, warm, and repeatable" }
       ];
+  const featuredStories = stories.slice(0, 4);
 
   return (
     <main className="shell">
@@ -111,11 +113,25 @@ export default function HomePage() {
 
       <section className="panel sectionBlock">
         <div className="sectionHeading">
-          <h2>{lang === "zh" ? "模式洞察" : "Mode Stories"}</h2>
-          <p>{lang === "zh" ? "查看四种模式背后的故事与方法，帮助你更好理解每次解读。" : "Discover the story and method behind each mode to make every reading more useful."}</p>
+          <h2>{lang === "zh" ? "神秘故事集" : "Mystic Storybook"}</h2>
+          <p>{lang === "zh" ? "用阅读者视角重讲经典故事，让塔罗、职业、面相、手相四种主题更有代入感与行动感。" : "Classic stories retold from a reader perspective, bringing stronger immersion and action to tarot, career, face, and palm themes."}</p>
+        </div>
+        <div className="storyStrip">
+          {featuredStories.map((story) => {
+            const content = story.content[lang];
+            return (
+              <article key={story.slug} className="storyMiniCard">
+                <h3>{content.title}</h3>
+                <p>{content.teaser}</p>
+                <Link href={`/stories/${story.slug}`} className="storyMiniLink">
+                  {lang === "zh" ? "查看故事" : "Read story"}
+                </Link>
+              </article>
+            );
+          })}
         </div>
         <div className="heroActions" style={{ marginTop: 0 }}>
-          <Link href="/insights" className="btn primary">{lang === "zh" ? "浏览洞察" : "Browse Stories"}</Link>
+          <Link href="/stories" className="btn primary">{lang === "zh" ? "浏览故事列表" : "Browse Story List"}</Link>
         </div>
       </section>
     </main>
