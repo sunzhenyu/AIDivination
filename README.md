@@ -1,57 +1,137 @@
-# AI Divination (Next.js)
+# AI Divination
 
-AI Divination is a bilingual (EN/ZH) web app for tarot, career, face, and palm AI readings, with story-driven UX and SEO-ready architecture for Vercel deployment.
+AI Divination is a multilingual Next.js platform for tarot, career, face, and palm AI readings, with story-driven guidance, rich result pages, and SEO-first architecture.
 
-## What this is
-- Next.js App Router project for `AI Divination`
-- Clean routes: `/`, `/tarot`, `/career`, `/face`, `/palm` and each `/result`
-- SEO content routes: `/insights`, `/insights/[slug]`, `/help`, `/privacy`, `/terms`
-- Bilingual switch (EN default, ZH toggle)
-- Server-side API routes: `/api/ai/*` (OpenAI-compatible endpoint)
-- Built-in SEO assets: `robots.txt`, `sitemap.xml`, `llms.txt`, metadata + schema
+## Live Demo
 
-## Local run
-1. Copy env file
+- Production: [https://aidivination.net](https://aidivination.net)
+
+## Project Overview
+
+AI Divination combines four interactive reading modes and a story content system:
+
+- Tarot AI Divination
+- Career AI Divination
+- Face AI Divination
+- Palm AI Divination
+- Story Library with detail pages and SEO-friendly routing
+
+This project is designed for global deployment on Vercel and supports clean SSR metadata, structured data, sitemap, robots, and social sharing previews.
+
+## Tech Stack
+
+- Framework: Next.js 15 (App Router)
+- UI: React 19 + TypeScript
+- AI Integration: OpenAI-compatible API (`/api/ai/*`)
+- Deployment: Vercel
+- SEO: metadata API, JSON-LD, `sitemap.xml`, `robots.txt`, `llms.txt`, canonical/hreflang
+- Analytics: Google tag (`gtag.js`)
+
+## Key Features
+
+- Multilingual UI with language switcher (currently EN/ZH)
+- Unified top navigation and modern responsive layout
+- Story pages with pagination and mode-aware reading inspiration
+- Result pages with download image and share (X/Facebook)
+- 404 page with SEO-safe indexing rules
+- Static verification support (Google Search Console HTML file)
+
+## Routes
+
+- `/` Home
+- `/tarot` and `/tarot/result`
+- `/career` and `/career/result`
+- `/face` and `/face/result`
+- `/palm` and `/palm/result`
+- `/stories` and `/stories/[slug]`
+- `/help`, `/privacy`, `/terms`
+
+## Getting Started
+
+1. Install dependencies
+
+```bash
+npm install
+```
+
+2. Create local env file
+
 ```bash
 cp .env.example .env.local
 ```
-2. Fill `.env.local`
+
+3. Configure `.env.local`
+
 ```env
 OPENAI_BASE_URL=https://yunwu.ai/v1
-OPENAI_API_KEY=your_key
+OPENAI_API_KEY=your_api_key
 OPENAI_MODEL=gpt-5.2
-NEXT_PUBLIC_SITE_URL=https://your-domain.com
+NEXT_PUBLIC_SITE_URL=https://aidivination.net
 ```
-3. Install and run
+
+4. Run development server
+
 ```bash
-npm install
 npm run dev
 ```
 
-## Vercel deployment
-1. Import this repo in Vercel.
-2. Set **Root Directory** to:
-`aidivination-next`
-3. Add environment variables:
-- `OPENAI_BASE_URL`
-- `OPENAI_API_KEY`
-- `OPENAI_MODEL`
-- `NEXT_PUBLIC_SITE_URL` (your production domain, e.g. `https://aidivination.com`)
-4. Deploy.
+5. Open
 
-## Notes
-- Do not expose API key in client code.
-- API calls are made from Next.js server routes.
-- If you want geo-latency optimization later, you can add region config per route.
+```text
+http://localhost:3000
+```
 
-## SEO checklist after deployment
-1. Visit and verify:
-   - `/robots.txt`
-   - `/sitemap.xml`
-2. Add your domain property in Google Search Console.
-3. Submit `https://your-domain.com/sitemap.xml`.
-4. Request indexing for:
-   - `/`
-   - `/tarot`, `/career`, `/face`, `/palm`
-   - `/insights` and several `/insights/[slug]` pages
-5. Keep publishing insights content weekly to build long-tail keyword coverage.
+## Environment Variables
+
+- `OPENAI_BASE_URL`: OpenAI-compatible API base URL
+- `OPENAI_API_KEY`: API key used by server routes
+- `OPENAI_MODEL`: Model name, e.g. `gpt-5.2`
+- `NEXT_PUBLIC_SITE_URL`: Canonical site URL for SEO metadata
+
+## Deployment (Vercel)
+
+1. Import this repository in Vercel
+2. Set Root Directory to `/` (repository root)
+3. Add environment variables from `.env.example`
+4. Deploy
+
+Recommended domain setup:
+
+- Primary domain: `https://aidivination.net`
+- Redirect all `*.vercel.app` traffic to your primary domain
+
+## SEO and Search Console
+
+Built-in SEO resources:
+
+- `https://aidivination.net/robots.txt`
+- `https://aidivination.net/sitemap.xml`
+- `https://aidivination.net/llms.txt`
+
+Google Search Console HTML verification:
+
+- Place file under `public/`, e.g.
+  `public/google8f0aa6fab7c86891.html`
+- Verify:
+  `https://aidivination.net/google8f0aa6fab7c86891.html`
+
+## Project Structure
+
+```text
+src/
+  app/              # App Router pages, API routes, metadata routes
+  components/       # Reusable UI blocks
+  lib/              # AI client, i18n, SEO utils, content data
+public/             # Static assets (icons, verification files)
+```
+
+## Search-Friendly Project Summary
+
+AI Divination is an SEO-ready, multilingual AI reading platform built with Next.js. It provides tarot, career, face, and palm divination experiences, story-driven interpretation pages, social sharing, and production deployment on Vercel.
+
+Suggested discovery keywords:
+`AI divination`, `AI tarot reading`, `career AI reading`, `face reading AI`, `palm reading AI`, `Next.js SEO`, `multilingual AI app`.
+
+## License
+
+This repository is currently maintained as a private/commercial project by the owner.

@@ -2,6 +2,18 @@
   "name": "aidivination-next",
   "version": "1.0.0",
   "private": true,
+  "description": "AI Divination is a multilingual Next.js platform for tarot, career, face, and palm AI readings with story-driven insights and SEO-first architecture.",
+  "keywords": [
+    "ai divination",
+    "tarot ai",
+    "career ai",
+    "face reading ai",
+    "palm reading ai",
+    "nextjs",
+    "seo",
+    "multilingual"
+  ],
+  "homepage": "https://aidivination.net",
   "scripts": {
     "dev": "NEXT_DISABLE_DEVTOOLS=1 next dev -p 3000",
     "build": "next build",
