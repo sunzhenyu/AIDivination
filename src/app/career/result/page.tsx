@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { TopNav } from "@/components/top-nav";
+import { ResultActions } from "@/components/result-actions";
 import { copy } from "@/lib/i18n";
 import { readSession, useLang, writeSession } from "@/lib/client";
 
@@ -32,6 +33,7 @@ export default function CareerResultPage() {
   const t = copy[lang];
   const [data, setData] = useState<CareerResult | null>(null);
   const [error, setError] = useState("");
+  const captureRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const cached = readSession<CareerResult>("careerResult");
@@ -70,7 +72,7 @@ export default function CareerResultPage() {
   return (
     <main className="shell">
       <TopNav active="career" />
-      <section className="panel sectionBlock resultCard">
+      <section className="panel sectionBlock resultCard" ref={captureRef}>
         <div className="resultHeader">
           <h2 className="resultTitle">{lang === "zh" ? "职业占卜结果" : "Career Reading Result"}</h2>
           <p className="resultSubtitle">
@@ -136,6 +138,7 @@ export default function CareerResultPage() {
             <div className="resultSection"><h3 className="sectionTitle">{lang === "zh" ? "行动建议" : "Action Advice"}</h3><ul>{(data.advice || []).map((x) => <li key={x}>{x}</li>)}</ul></div>
           </>
         )}
+        <ResultActions targetRef={captureRef} mode="career" />
         <Link href="/" className="btn secondary" style={{ marginTop: 16 }}>{t.common.backHome}</Link>
       </section>
     </main>

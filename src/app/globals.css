@@ -1095,6 +1095,13 @@ textarea:focus {
   font-weight: 700;
 }
 
+.resultActions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+
 .siteFooter {
   position: relative;
   z-index: 2;
@@ -1235,6 +1242,10 @@ textarea:focus {
   }
 
   .insightList {
+    grid-template-columns: 1fr;
+  }
+
+  .resultActions {
     grid-template-columns: 1fr;
   }
 

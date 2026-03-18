@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { TopNav } from "@/components/top-nav";
+import { ResultActions } from "@/components/result-actions";
 import { copy } from "@/lib/i18n";
 import { readSession, useLang } from "@/lib/client";
 
@@ -27,6 +28,7 @@ export default function PalmResultPage() {
   const { lang } = useLang();
   const t = copy[lang];
   const [data, setData] = useState<PalmResult | null>(null);
+  const captureRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     setData(readSession<PalmResult>("palmResult"));
@@ -35,7 +37,7 @@ export default function PalmResultPage() {
   return (
     <main className="shell">
       <TopNav active="palm" />
-      <section className="panel sectionBlock resultCard">
+      <section className="panel sectionBlock resultCard" ref={captureRef}>
         <div className="resultHeader">
           <h2 className="resultTitle">{lang === "zh" ? "手相占卜结果" : "Palm Reading Result"}</h2>
           <p className="resultSubtitle">
@@ -104,6 +106,7 @@ export default function PalmResultPage() {
             <div className="resultSection"><h3 className="sectionTitle">{lang === "zh" ? "建议" : "Advice"}</h3><ul>{(data.advice || []).map((x) => <li key={x}>{x}</li>)}</ul></div>
           </>
         )}
+        <ResultActions targetRef={captureRef} mode="palm" />
         <Link href="/" className="btn secondary" style={{ marginTop: 16 }}>{t.common.backHome}</Link>
       </section>
     </main>

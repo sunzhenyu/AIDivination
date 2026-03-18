@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { TopNav } from "@/components/top-nav";
+import { ResultActions } from "@/components/result-actions";
 import { copy } from "@/lib/i18n";
 import { readSession, useLang, writeSession } from "@/lib/client";
 
@@ -55,6 +56,7 @@ export default function TarotResultPage() {
   const t = copy[lang];
   const [data, setData] = useState<TarotResult | null>(null);
   const [error, setError] = useState("");
+  const captureRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const cached = readSession<TarotResult>("tarotResult");
@@ -83,7 +85,7 @@ export default function TarotResultPage() {
   return (
     <main className="shell">
       <TopNav active="tarot" />
-      <section className="panel sectionBlock resultCard">
+      <section className="panel sectionBlock resultCard" ref={captureRef}>
         <div className="resultHeader">
           <h2 className="resultTitle">{lang === "zh" ? "塔罗牌占卜结果" : "Tarot Reading Result"}</h2>
           <p className="resultSubtitle">
@@ -141,6 +143,7 @@ export default function TarotResultPage() {
             <div className="resultSection"><h3 className="sectionTitle">{lang === "zh" ? "行动建议" : "Advice"}</h3><ul>{(data.advice || []).map((x) => <li key={x}>{x}</li>)}</ul></div>
           </>
         )}
+        <ResultActions targetRef={captureRef} mode="tarot" />
         <Link href="/" className="btn secondary" style={{ marginTop: 16 }}>{t.common.backHome}</Link>
       </section>
     </main>
