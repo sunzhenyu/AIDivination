@@ -7,10 +7,11 @@ import { SITE_NAME, SITE_URL } from "@/lib/seo";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: SITE_NAME,
+    default: "AI Divination - Tarot, Career, Face & Palm Readings",
     template: `%s | ${SITE_NAME}`
   },
-  description: "AI readings for tarot, career, face, and palm. Explore practical guidance with bilingual support.",
+  description:
+    "AI Divination offers tarot, career, face, and palm readings with multilingual guidance, shareable results, and practical next-step insights for daily reflection.",
   keywords: [
     "AI divination",
     "tarot reading",
@@ -30,16 +31,18 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: SITE_NAME,
-    description: "AI readings for tarot, career, face, and palm.",
+    title: "AI Divination - Tarot, Career, Face & Palm Readings",
+    description:
+      "AI Divination offers tarot, career, face, and palm readings with multilingual guidance, shareable results, and practical next-step insights for daily reflection.",
     url: SITE_URL,
     siteName: SITE_NAME,
     type: "website"
   },
   twitter: {
     card: "summary_large_image",
-    title: SITE_NAME,
-    description: "Tarot, career, face and palm AI readings."
+    title: "AI Divination - Tarot, Career, Face & Palm Readings",
+    description:
+      "AI Divination offers tarot, career, face, and palm readings with multilingual guidance, shareable results, and practical next-step insights for daily reflection."
   },
   icons: {
     icon: "/icon.svg",
