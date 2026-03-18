@@ -7,3 +7,4 @@ export function absoluteUrl(path: string) {
 }
 
 export const SOCIAL_IMAGE_URL = absoluteUrl("/icon.svg");
+export const TWITTER_IMAGE_URL = "https://abs.twimg.com/responsive-web/client-web/icon-svg.ea5ff4aa.svg";

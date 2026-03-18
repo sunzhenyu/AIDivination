@@ -16,12 +16,33 @@ export function SiteFooter() {
           <p>{t.tagline}</p>
         </div>
         <div className="footerCols">
-          <div className="footerCol">
+          <div className="footerCol contactCol">
             <h4>{t.supportTitle}</h4>
-            <a href="mailto:kuyadan136@gmail.com" title={lang === "zh" ? "发送邮件联系我们" : "Send us an email"}>{t.contactEmail}</a>
-            <a href="https://x.com/DanDan344479" title={lang === "zh" ? "打开 X 账号 @DanDan344479" : "Open X profile @DanDan344479"} target="_blank" rel="noreferrer">
-              {t.contactX}
-            </a>
+            <div className="footerIconLinks">
+              <a
+                href="mailto:kuyadan136@gmail.com"
+                title={lang === "zh" ? "发送邮件联系我们" : "Send us an email"}
+                aria-label={lang === "zh" ? "发送邮件联系我们" : "Send us an email"}
+                className="footerIconLink"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3.75 6.75h16.5a.75.75 0 0 1 .75.75v9a.75.75 0 0 1-.75.75H3.75a.75.75 0 0 1-.75-.75v-9a.75.75 0 0 1 .75-.75Z" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="m4 8 8 6 8-6" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+              <a
+                href="https://x.com/DanDan344479"
+                title={lang === "zh" ? "打开 X 账号 @DanDan344479" : "Open X profile @DanDan344479"}
+                aria-label={lang === "zh" ? "打开 X 账号 @DanDan344479" : "Open X profile @DanDan344479"}
+                target="_blank"
+                rel="noreferrer"
+                className="footerIconLink"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 4l16 16M20 4 4 20" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
+                </svg>
+              </a>
+            </div>
           </div>
           <div className="footerCol">
             <h4>{t.helpTitle}</h4>
