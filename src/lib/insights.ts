@@ -16,7 +16,8 @@ export type Insight = {
   content: Record<Lang, LocalizedInsight>;
 };
 
-const _insights: Insight[] = [
+type InsightBase = Omit<Insight, "content"> & { content: Pick<Record<Lang, LocalizedInsight>, "en" | "zh"> };
+const _insights: InsightBase[] = [
   {
     slug: "tarot-behind-the-ritual",
     mode: "tarot",
