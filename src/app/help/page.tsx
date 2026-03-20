@@ -26,7 +26,7 @@ export default function HelpPage() {
           <h4>{lang === "zh" ? "新手引导" : "Getting Started"}</h4>
           <p className="muted">
             {lang === "zh"
-              ? "在首页选择模式后，按页面提示输入信息或上传照片，点击"分析/生成"即可。系统会先展示过渡动画，再进入结果页。"
+              ? "在首页选择模式后，按页面提示输入信息或上传照片，点击「分析/生成」即可。系统会先展示过渡动画，再进入结果页。"
               : "Choose a mode on Home, fill in your inputs or upload/take a photo, then click analyze. You will see a transition animation before the result page appears."}
           </p>
         </div>
