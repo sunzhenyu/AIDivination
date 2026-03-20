@@ -36,7 +36,7 @@ export function HomePageClient() {
           <p className="subtitle">{t.home.subtitle}</p>
           <div className="heroActions">
             <Link href="/career" title={lang === "zh" ? "开始职业 AI 占卜分析" : "Start Career AI reading"} className="btn primary">{t.common.start}</Link>
-            <a href="#modes" title={lang === "zh" ? "查看四种 AI 占卜体验模式" : "Explore all four AI divination modes"} className="btn secondary">{lang === "zh" ? "查看四种体验" : "Explore all four modes"}</a>
+            <a href="#modes" title={lang === "zh" ? "查看五种 AI 占卜体验模式" : "Explore all five AI divination modes"} className="btn secondary">{lang === "zh" ? "查看五种体验" : "Explore all five modes"}</a>
           </div>
           <div className="heroBadges">
             <span className="badgeChip">{lang === "zh" ? "轻松探索优先" : "Fun-first guidance"}</span>
@@ -61,7 +61,7 @@ export function HomePageClient() {
       <section className="panel sectionBlock" id="modes">
         <div className="sectionHeading">
           <h2>{t.home.cardsTitle}</h2>
-          <p>{lang === "zh" ? "四种入口覆盖最容易理解的探索路径：卡牌、职业、面部画像与手相叙事。" : "Four entry points designed around the ways users understand tarot, personality guidance, and light career reflection."}</p>
+          <p>{lang === "zh" ? "五种入口覆盖高频探索路径：卡牌、职业、面部画像、手相叙事与梦境符号。" : "Five entry points cover tarot, career, face, palm, and dream-symbol interpretation in one flow."}</p>
         </div>
         <div className="grid">
           <article className="card">
@@ -107,6 +107,17 @@ export function HomePageClient() {
             </div>
             <p>{t.home.palmDesc}</p>
             <Link href="/palm" title={lang === "zh" ? "进入手相 AI 占卜" : "Open Palm AI divination"} className="btn">{lang === "zh" ? "查看手相" : "Read your palm"}</Link>
+          </article>
+          <article className="card">
+            <div className="cardHeader">
+              <span className="cardIcon">🌙</span>
+              <div>
+                <h3>{lang === "zh" ? "解梦AI占卜" : "Dream AI Divination"}</h3>
+                <div className="cardTag">{lang === "zh" ? "梦境符号解码" : "Dream symbol decoding"}</div>
+              </div>
+            </div>
+            <p>{t.home.dreamDesc}</p>
+            <Link href="/dream" title={lang === "zh" ? "进入解梦 AI 占卜" : "Open Dream AI divination"} className="btn">{lang === "zh" ? "开始解梦" : "Decode dream"}</Link>
           </article>
         </div>
       </section>

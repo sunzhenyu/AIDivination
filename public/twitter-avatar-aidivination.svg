@@ -1,0 +1,48 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="90" y1="80" x2="920" y2="930" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#06142F"/>
+      <stop offset="0.45" stop-color="#102D5D"/>
+      <stop offset="1" stop-color="#27153D"/>
+    </linearGradient>
+    <radialGradient id="haloA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(760 290) rotate(126) scale(460 560)">
+      <stop stop-color="#47C4FF" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#47C4FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="haloB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(285 780) rotate(68) scale(390 480)">
+      <stop stop-color="#FF8B77" stop-opacity="0.26"/>
+      <stop offset="1" stop-color="#FF8B77" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="320" y1="230" x2="690" y2="710" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFD98A"/>
+      <stop offset="1" stop-color="#F28E7A"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+  </defs>
+
+  <rect width="1024" height="1024" rx="230" fill="url(#bg)"/>
+  <rect width="1024" height="1024" rx="230" fill="url(#haloA)"/>
+  <rect width="1024" height="1024" rx="230" fill="url(#haloB)"/>
+
+  <g opacity="0.26" stroke="#7DB9FF">
+    <circle cx="760" cy="290" r="170"/>
+    <circle cx="760" cy="290" r="240"/>
+  </g>
+
+  <g opacity="0.45" fill="#6FC8FF" filter="url(#soft)">
+    <circle cx="180" cy="220" r="7"/>
+    <circle cx="860" cy="190" r="5"/>
+    <circle cx="840" cy="780" r="6"/>
+    <circle cx="240" cy="850" r="5"/>
+    <circle cx="120" cy="620" r="4"/>
+  </g>
+
+  <path d="M512 212C422 212 349 285 349 375C349 467 422 540 512 540C602 540 675 467 675 375C675 285 602 212 512 212Z" stroke="url(#gold)" stroke-width="18"/>
+  <path d="M436 700C436 658 470 624 512 624C554 624 588 658 588 700V742C588 764 570 782 548 782H476C454 782 436 764 436 742V700Z" stroke="url(#gold)" stroke-width="18"/>
+  <path d="M512 540V624" stroke="url(#gold)" stroke-width="18" stroke-linecap="round"/>
+  <path d="M463 338L512 274L561 338" stroke="url(#gold)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <text x="512" y="884" text-anchor="middle" fill="url(#gold)" font-size="120" font-family="Avenir Next, SF Pro Display, Segoe UI, sans-serif" font-weight="700" letter-spacing="6">AI</text>
+</svg>

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { copy } from "@/lib/i18n";
 import { useLang } from "@/lib/client";
 
-export function TopNav({ active }: { active: "home" | "tarot" | "career" | "face" | "palm" | "stories" | "insights" }) {
+export function TopNav({ active }: { active: "home" | "tarot" | "career" | "face" | "palm" | "dream" | "stories" | "insights" }) {
   const { lang, setLang } = useLang();
   const t = copy[lang];
 
@@ -17,6 +17,7 @@ export function TopNav({ active }: { active: "home" | "tarot" | "career" | "face
         <Link href="/career" title={lang === "zh" ? "进入职业 AI 占卜页面" : "Open Career AI divination page"} className={active === "career" ? "navLink active" : "navLink"}>{t.nav.career}</Link>
         <Link href="/face" title={lang === "zh" ? "进入面相 AI 占卜页面" : "Open Face AI divination page"} className={active === "face" ? "navLink active" : "navLink"}>{t.nav.face}</Link>
         <Link href="/palm" title={lang === "zh" ? "进入手相 AI 占卜页面" : "Open Palm AI divination page"} className={active === "palm" ? "navLink active" : "navLink"}>{t.nav.palm}</Link>
+        <Link href="/dream" title={lang === "zh" ? "进入 AI 解梦页面" : "Open AI dream interpretation page"} className={active === "dream" ? "navLink active" : "navLink"}>{t.nav.dream}</Link>
         <Link href="/stories" title={lang === "zh" ? "进入故事专栏" : "Open story library"} className={active === "stories" || active === "insights" ? "navLink active" : "navLink"}>{t.nav.stories}</Link>
       </nav>
       <div className="langSelectWrap">

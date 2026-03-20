@@ -194,3 +194,59 @@ export function fallbackPalm(lang: Lang) {
     fallback: true
   };
 }
+
+export function fallbackDream(dream: string, lang: Lang) {
+  if (lang === "zh") {
+    return {
+      dreamTitle: "夜行桥影",
+      coreTheme: "过渡、选择与安全感重建",
+      summary:
+        "这个梦反复出现“路、桥、追赶、错过”这类元素，通常不是预言，而是内在压力在提醒你：你正在从旧节奏切换到新阶段。梦里的不确定感，往往对应现实中的决策焦虑与控制感下降。",
+      symbols: [
+        { symbol: "桥或岔路", meaning: "表示你正处于关键过渡点，需要做阶段性取舍。" },
+        { symbol: "迷路或追赶", meaning: "常见于目标过多、优先级混乱时，反映注意力被分散。" },
+        { symbol: "黑夜与微光", meaning: "说明你并非没有方向，而是需要更小步的验证路径。" }
+      ],
+      emotionalSignals: [
+        "你最近可能在“想做对”与“害怕做错”之间拉扯。",
+        "对外在评价较敏感，导致行动节奏被压慢。",
+        "内在其实有答案，但仍缺少一个明确的启动动作。"
+      ],
+      practicalAdvice: [
+        "把当前问题拆成 3 个可执行动作，先完成最小闭环。",
+        "未来 7 天只追踪一个关键结果，减少多线并行。",
+        "睡前写 3 行“今天已完成”，帮助大脑从焦虑切换到完成感。"
+      ],
+      oneQuestion: "如果只允许你做一个最小决定来恢复掌控感，这个决定是什么？",
+      disclaimer: "本解读用于自我反思与情绪整理，不替代医疗、法律或专业心理建议。",
+      fallback: true,
+      sourceDream: dream
+    };
+  }
+
+  return {
+    dreamTitle: "Bridge at Midnight",
+    coreTheme: "Transition, choice, and rebuilding safety",
+    summary:
+      "Dream patterns like roads, bridges, being late, or getting chased usually signal a transition state rather than prediction. Your mind may be processing pressure around control, timing, and decision clarity while moving from an old rhythm into a new one.",
+    symbols: [
+      { symbol: "Bridge or crossroads", meaning: "You are near a meaningful transition and need phased choices." },
+      { symbol: "Getting lost or chased", meaning: "Often reflects scattered priorities and cognitive overload." },
+      { symbol: "Night with distant light", meaning: "Direction exists, but confidence needs smaller proof steps." }
+    ],
+    emotionalSignals: [
+      "You may be caught between doing it right and fearing mistakes.",
+      "External judgment may be slowing your momentum.",
+      "Part of you already knows the next move but has not committed yet."
+    ],
+    practicalAdvice: [
+      "Break your current challenge into three executable actions and close one loop first.",
+      "Track one key outcome for the next seven days; avoid parallel over-planning.",
+      "Write three lines of completion before sleep to shift from anxiety to closure."
+    ],
+    oneQuestion: "If you could make one small decision to regain control this week, what would it be?",
+    disclaimer: "This interpretation is for reflection and does not replace medical, legal, or mental-health advice.",
+    fallback: true,
+    sourceDream: dream
+  };
+}
