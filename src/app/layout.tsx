@@ -28,7 +28,9 @@ export const metadata: Metadata = {
     canonical: "/",
     languages: {
       "en-US": "/?lang=en",
-      "zh-CN": "/?lang=zh"
+      "zh-CN": "/?lang=zh",
+      "fr-FR": "/?lang=fr",
+      "ja-JP": "/?lang=ja"
     }
   },
   openGraph: {
@@ -65,7 +67,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "@type": "WebSite",
     name: SITE_NAME,
     url: SITE_URL,
-    inLanguage: ["en", "zh-CN"],
+    inLanguage: ["en", "zh-CN", "fr-FR", "ja-JP"],
     publisher: {
       "@type": "Organization",
       name: SITE_NAME,

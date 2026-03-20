@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { chatJson, hasAiConfig, outputLanguage } from "@/lib/ai";
-import { fallbackDream } from "@/lib/fallback";
+import { fallbackDream, toLang } from "@/lib/fallback";
 
 export async function POST(req: NextRequest) {
   const payload = await req.json().catch(() => ({}));
@@ -14,7 +14,7 @@ export async function POST(req: NextRequest) {
   try {
     const output = outputLanguage(lang);
     if (!hasAiConfig()) {
-      return NextResponse.json(fallbackDream(dream, lang === "zh" ? "zh" : "en"));
+      return NextResponse.json(fallbackDream(dream, toLang(lang)));
     }
 
     const data = await chatJson(
@@ -51,7 +51,7 @@ Requirements:
     return NextResponse.json(data);
   } catch (error) {
     return NextResponse.json(
-      { ...fallbackDream(dream, lang === "zh" ? "zh" : "en"), upstreamError: String(error) },
+      { ...fallbackDream(dream, toLang(lang)), upstreamError: String(error) },
       { status: 200 }
     );
   }

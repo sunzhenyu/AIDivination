@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { chatJson, hasAiConfig, outputLanguage } from "@/lib/ai";
-import { fallbackTarot } from "@/lib/fallback";
+import { fallbackTarot, toLang } from "@/lib/fallback";
 
 export async function POST(req: NextRequest) {
   const payload = await req.json().catch(() => ({}));
@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
   try {
     const output = outputLanguage(lang);
     if (!hasAiConfig()) {
-      return NextResponse.json(fallbackTarot(cards, lang === "zh" ? "zh" : "en"));
+      return NextResponse.json(fallbackTarot(cards, toLang(lang)));
     }
 
     const data = await chatJson(
@@ -51,7 +51,7 @@ Requirements:
     return NextResponse.json(data);
   } catch (error) {
     return NextResponse.json(
-      { ...fallbackTarot(cards, lang === "zh" ? "zh" : "en"), upstreamError: String(error) },
+      { ...fallbackTarot(cards, toLang(lang)), upstreamError: String(error) },
       { status: 200 }
     );
   }

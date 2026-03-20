@@ -44,5 +44,8 @@ export async function chatJson(systemPrompt: string, userPrompt: string) {
 }
 
 export function outputLanguage(lang: string | null | undefined) {
-  return lang === "zh" ? "Chinese" : "English";
+  if (lang === "zh") return "Chinese";
+  if (lang === "fr") return "French";
+  if (lang === "ja") return "Japanese";
+  return "English";
 }

@@ -57,7 +57,7 @@ export default function PalmPage() {
       }
       setError("");
     } catch {
-      setError(lang === "zh" ? "无法启动相机，请检查浏览器权限设置。" : "Unable to open camera. Check browser permissions.");
+      setError(t.ui.cameraError);
     }
   }
 
@@ -134,27 +134,19 @@ export default function PalmPage() {
       <TopNav active="palm" />
       <section className="panel sectionBlock stack">
         <div className="pageHeader">
-          <span className="eyebrow">AI Divination</span>
+          {t.eyebrow && <span className="eyebrow">{t.eyebrow}</span>}
           <h1 className="title" style={{ maxWidth: "none", marginInline: "auto" }}>{t.palm.title}</h1>
-          <p className="subtitle">
-            {lang === "zh"
-              ? "AI 手相解读：上传手掌照片，读懂生命线、智慧线、感情线与事业线节律。"
-              : "AI palm reading: upload your palm photo to decode life, head, heart, and career line rhythms."}
-          </p>
+          <p className="subtitle">{t.palm.subtitle}</p>
         </div>
         <div className="resultSection" style={{ marginTop: 0 }}>
-          <h4>{lang === "zh" ? "拍摄建议" : "Capture guidance"}</h4>
-          <p className="muted">
-            {lang === "zh"
-              ? "请保持手掌展开、纹路清晰、光线均匀，避免强反光和过度模糊。"
-              : "Keep your palm open with clear lines and even lighting, avoiding glare and blur."}
-          </p>
+          <h4>{t.palm.captureGuidance}</h4>
+          <p className="muted">{t.palm.captureGuidanceDesc}</p>
         </div>
 
         <div className="mediaActions">
-          <label className="btn secondary" htmlFor="palmImageInput">{lang === "zh" ? "选择图片" : "Choose image"}</label>
+          <label className="btn secondary" htmlFor="palmImageInput">{t.ui.chooseImage}</label>
           <button type="button" className="btn secondary" onClick={() => openCamera()}>
-            {lang === "zh" ? "开启相机" : "Open camera"}
+            {t.ui.openCamera}
           </button>
         </div>
         <input id="palmImageInput" className="fileInputHidden" type="file" accept="image/*" onChange={onFileChange} />
@@ -163,9 +155,9 @@ export default function PalmPage() {
           <div className="mediaCard cameraWrap">
             <video ref={videoRef} className="cameraVideo" autoPlay playsInline />
             <div className="mediaActions">
-              <button type="button" className="btn secondary" onClick={switchCamera}>{lang === "zh" ? "切换相机" : "Switch camera"}</button>
-              <button type="button" className="btn secondary" onClick={capturePhoto}>{lang === "zh" ? "拍照" : "Capture"}</button>
-              <button type="button" className="btn secondary" onClick={closeCamera}>{lang === "zh" ? "关闭相机" : "Close camera"}</button>
+              <button type="button" className="btn secondary" onClick={switchCamera}>{t.ui.switchCamera}</button>
+              <button type="button" className="btn secondary" onClick={capturePhoto}>{t.ui.capture}</button>
+              <button type="button" className="btn secondary" onClick={closeCamera}>{t.ui.closeCamera}</button>
             </div>
           </div>
         ) : null}
@@ -175,7 +167,7 @@ export default function PalmPage() {
             <img className="mediaPreview" src={previewUrl} alt="palm preview" />
             <p className="muted fileMeta">{fileName}</p>
             <div className="mediaActions">
-              <button type="button" className="btn secondary" onClick={resetSelection}>{lang === "zh" ? "重新拍摄/选择" : "Retake"}</button>
+              <button type="button" className="btn secondary" onClick={resetSelection}>{t.ui.retake}</button>
               <button type="button" className="btn" disabled={loading} onClick={analyze}>{loading ? t.common.loading : t.palm.action}</button>
             </div>
           </div>

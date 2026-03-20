@@ -16,7 +16,7 @@ export type Insight = {
   content: Record<Lang, LocalizedInsight>;
 };
 
-export const insights: Insight[] = [
+const _insights: Insight[] = [
   {
     slug: "tarot-behind-the-ritual",
     mode: "tarot",
@@ -274,6 +274,17 @@ export const insights: Insight[] = [
     }
   }
 ];
+
+const insightsWithFallback: Insight[] = _insights.map((insight) => ({
+  ...insight,
+  content: {
+    ...insight.content,
+    fr: insight.content.en,
+    ja: insight.content.en
+  }
+}));
+
+export const insights = insightsWithFallback;
 
 export function getInsightBySlug(slug: string) {
   return insights.find((item) => item.slug === slug) || null;

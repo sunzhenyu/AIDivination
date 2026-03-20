@@ -53,22 +53,14 @@ export default function CareerPage() {
       <TopNav active="career" />
       <section className="panel sectionBlock stack">
         <div className="pageHeader">
-          <span className="eyebrow">AI Divination</span>
+          {t.eyebrow && <span className="eyebrow">{t.eyebrow}</span>}
           <h1 className="title" style={{ maxWidth: "none", marginInline: "auto" }}>{t.career.title}</h1>
-          <p className="subtitle">
-            {lang === "zh"
-              ? "AI 职业洞察：把职场信号转成成长节奏、优势画像与下一步行动。"
-              : "AI career reading: translate work signals into growth rhythm, strengths, and practical next steps."}
-          </p>
+          <p className="subtitle">{t.career.subtitle}</p>
         </div>
 
         <div className="resultSection" style={{ marginTop: 0 }}>
-          <h4>{lang === "zh" ? "你将获得" : "What you will get"}</h4>
-          <p className="muted">
-            {lang === "zh"
-              ? "结果会包含职业关键词、未来 3-6 个月趋势、优势短板，以及一位与你气质接近的历史人物。"
-              : "Your result includes key traits, 3-6 month trends, strengths, blind spots, and a matching historical archetype."}
-          </p>
+          <h4>{t.career.whatYouGet}</h4>
+          <p className="muted">{t.career.whatYouGetDesc}</p>
         </div>
 
         <div className="stack">

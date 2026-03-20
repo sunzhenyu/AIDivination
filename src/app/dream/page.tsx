@@ -63,36 +63,24 @@ export default function DreamPage() {
       <TopNav active="dream" />
       <section className="panel sectionBlock stack">
         <div className="pageHeader">
-          <span className="eyebrow">AI Divination</span>
+          {t.eyebrow && <span className="eyebrow">{t.eyebrow}</span>}
           <h1 className="title" style={{ maxWidth: "none", marginInline: "auto" }}>{t.dream.title}</h1>
-          <p className="subtitle">
-            {lang === "zh"
-              ? "AI 梦境解析：输入你记得的梦境片段，获得象征解码、情绪线索与现实启发。"
-              : "AI dream interpretation: describe your dream and get symbol decoding, emotional cues, and practical life hints."}
-          </p>
+          <p className="subtitle">{t.dream.subtitle}</p>
         </div>
 
         <div className="resultSection" style={{ marginTop: 0 }}>
-          <h4>{lang === "zh" ? "输入建议" : "Input guidance"}</h4>
-          <p className="muted">
-            {lang === "zh"
-              ? "尽量写下关键角色、场景、反复出现的符号，以及你醒来后的第一情绪。"
-              : "Include key people, places, repeated symbols, and your first emotion after waking up."}
-          </p>
+          <h4>{t.dream.inputGuidance}</h4>
+          <p className="muted">{t.dream.inputGuidanceDesc}</p>
         </div>
 
         <form className="stack" onSubmit={onSubmit}>
           <div>
-            <label className="fieldLabel">{lang === "zh" ? "梦境内容" : "Dream details"}</label>
+            <label className="fieldLabel">{t.dream.dreamLabel}</label>
             <textarea
               rows={8}
               value={dream}
               onChange={(e) => setDream(e.target.value)}
-              placeholder={
-                lang === "zh"
-                  ? "例如：我梦见自己在夜里赶路，走到一座桥上，桥对面有灯，但我一直找不到过去的路……"
-                  : "Example: I was walking at night and reached a bridge. There were lights on the other side, but I could not find the path across..."
-              }
+              placeholder={t.dream.placeholder}
             />
           </div>
           <button className="btn" disabled={loading || !dream.trim()} type="submit">
@@ -106,12 +94,12 @@ export default function DreamPage() {
           <div className="stack">
             <section className="resultSection">
               <h4>{result.dreamTitle}</h4>
-              <p><strong>{lang === "zh" ? "核心主题：" : "Core theme: "}</strong>{result.coreTheme}</p>
+              <p><strong>{t.dream.coreTheme}</strong>{result.coreTheme}</p>
               <p>{result.summary}</p>
             </section>
 
             <section className="resultSection">
-              <h4>{lang === "zh" ? "梦境符号解码" : "Symbol decoding"}</h4>
+              <h4>{t.dream.symbolDecoding}</h4>
               <ul>
                 {result.symbols.map((item) => (
                   <li key={`${item.symbol}-${item.meaning}`}>
@@ -123,7 +111,7 @@ export default function DreamPage() {
             </section>
 
             <section className="resultSection">
-              <h4>{lang === "zh" ? "情绪线索" : "Emotional signals"}</h4>
+              <h4>{t.dream.emotionalSignals}</h4>
               <ul>
                 {result.emotionalSignals.map((item) => (
                   <li key={item}>{item}</li>
@@ -132,13 +120,13 @@ export default function DreamPage() {
             </section>
 
             <section className="resultSection">
-              <h4>{lang === "zh" ? "现实启发行动" : "Practical next moves"}</h4>
+              <h4>{t.dream.practicalMoves}</h4>
               <ul>
                 {result.practicalAdvice.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
-              <p><strong>{lang === "zh" ? "反思提问：" : "Reflection prompt: "}</strong>{result.oneQuestion}</p>
+              <p><strong>{t.dream.reflectionPrompt}</strong>{result.oneQuestion}</p>
               <p className="muted">{result.disclaimer}</p>
             </section>
           </div>

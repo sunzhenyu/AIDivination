@@ -39,29 +39,25 @@ export default function PalmResultPage() {
       <TopNav active="palm" />
       <section className="panel sectionBlock resultCard" ref={captureRef}>
         <div className="resultHeader">
-          <h2 className="resultTitle">{lang === "zh" ? "手相占卜结果" : "Palm Reading Result"}</h2>
-          <p className="resultSubtitle">
-            {lang === "zh"
-              ? "基于掌纹线索的阶段性参考，帮助你形成行动节奏。"
-              : "A phase-based palm reading to support your personal rhythm and planning."}
-          </p>
+          <h2 className="resultTitle">{t.labels.palmResultTitle}</h2>
+          <p className="resultSubtitle">{t.labels.palmResultSubtitle}</p>
         </div>
         {!data ? <p className="muted">{t.common.noData}</p> : (
           <>
             <div className="resultSection">
-              <h3 className="sectionTitle">{lang === "zh" ? "掌纹解读" : "Palm Lines"}</h3>
+              <h3 className="sectionTitle">{t.labels.palmLines}</h3>
               <div className="featureGrid">
                 {[
-                  { key: "life", icon: "🌱", labelZh: "生命线", labelEn: "Life Line" },
-                  { key: "head", icon: "🧠", labelZh: "智慧线", labelEn: "Head Line" },
-                  { key: "heart", icon: "💗", labelZh: "感情线", labelEn: "Heart Line" },
-                  { key: "career", icon: "📈", labelZh: "事业线", labelEn: "Career Line" }
+                  { key: "life", icon: "🌱", label: t.labels.lifeLine },
+                  { key: "head", icon: "🧠", label: t.labels.headLine },
+                  { key: "heart", icon: "💗", label: t.labels.heartLine },
+                  { key: "career", icon: "📈", label: t.labels.careerLine }
                 ].map((item) => {
                   const value = data.lines?.[item.key as keyof NonNullable<PalmResult["lines"]>];
                   if (!value) return null;
                   return (
                     <article className="featureItem" key={item.key}>
-                      <div className="featureIcon">{item.icon} {lang === "zh" ? item.labelZh : item.labelEn}</div>
+                      <div className="featureIcon">{item.icon} {item.label}</div>
                       <p>{value}</p>
                     </article>
                   );
@@ -70,13 +66,13 @@ export default function PalmResultPage() {
             </div>
             {data.narrativeSummary ? (
               <div className="resultSection">
-                <h3 className="sectionTitle">{lang === "zh" ? "阶段故事线" : "Narrative Summary"}</h3>
+                <h3 className="sectionTitle">{t.labels.narrativeSummary}</h3>
                 <p>{data.narrativeSummary}</p>
               </div>
             ) : null}
             {data.historicalFigure ? (
               <div className="resultSection">
-                <h3 className="sectionTitle">{lang === "zh" ? "历史人物匹配" : "Historical Match"}</h3>
+                <h3 className="sectionTitle">{t.labels.historicalMatch}</h3>
                 <div className="historicalMatch">
                   <div className="historicalFigure">
                     <div className="historicalAvatar">{String(data.historicalFigure.name || "?").charAt(0)}</div>
@@ -86,7 +82,7 @@ export default function PalmResultPage() {
                       <p className="historicalDesc">{data.historicalFigure.description}</p>
                       {data.historicalFigure.story ? <p className="historicalDesc">{data.historicalFigure.story}</p> : null}
                       <p className="historicalReason">
-                        <strong>{lang === "zh" ? "匹配理由：" : "Reason:"}</strong> {data.historicalFigure.matchReason}
+                        <strong>{t.labels.matchReason}</strong> {data.historicalFigure.matchReason}
                       </p>
                       {Array.isArray(data.historicalFigure.achievements) && data.historicalFigure.achievements.length ? (
                         <div className="achievementList">
@@ -101,9 +97,9 @@ export default function PalmResultPage() {
                 </div>
               </div>
             ) : null}
-            <div className="resultSection"><h3 className="sectionTitle">{lang === "zh" ? "职业提示" : "Career Cues"}</h3><ul>{(data.career || []).map((x) => <li key={x}>{x}</li>)}</ul></div>
-            <div className="resultSection"><h3 className="sectionTitle">{lang === "zh" ? "未来节奏" : "Future Rhythm"}</h3><ul>{(data.future || []).map((x) => <li key={x}>{x}</li>)}</ul></div>
-            <div className="resultSection"><h3 className="sectionTitle">{lang === "zh" ? "建议" : "Advice"}</h3><ul>{(data.advice || []).map((x) => <li key={x}>{x}</li>)}</ul></div>
+            <div className="resultSection"><h3 className="sectionTitle">{t.labels.careerCues}</h3><ul>{(data.career || []).map((x) => <li key={x}>{x}</li>)}</ul></div>
+            <div className="resultSection"><h3 className="sectionTitle">{t.labels.futureRhythm}</h3><ul>{(data.future || []).map((x) => <li key={x}>{x}</li>)}</ul></div>
+            <div className="resultSection"><h3 className="sectionTitle">{t.labels.advice}</h3><ul>{(data.advice || []).map((x) => <li key={x}>{x}</li>)}</ul></div>
           </>
         )}
         <ResultActions targetRef={captureRef} mode="palm" />

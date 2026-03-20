@@ -4,6 +4,7 @@ import Link from "next/link";
 import { TopNav } from "@/components/top-nav";
 import { stories } from "@/lib/stories";
 import { useLang } from "@/lib/client";
+import { copy } from "@/lib/i18n";
 
 const ITEMS_PER_PAGE = 10;
 const modeTag = {
@@ -18,6 +19,18 @@ const modeTag = {
     career: "成长轨迹 · AI占卜",
     face: "性格映像 · AI占卜",
     palm: "人生节律 · AI占卜"
+  },
+  fr: {
+    tarot: "Cartes Intuitives · AI Divination",
+    career: "Trajectoire · AI Divination",
+    face: "Profil Perso. · AI Divination",
+    palm: "Rythme de Vie · AI Divination"
+  },
+  ja: {
+    tarot: "インサイトカード · AI占い",
+    career: "成長の軌跡 · AI占い",
+    face: "パーソナリティ · AI占い",
+    palm: "人生のリズム · AI占い"
   }
 } as const;
 
@@ -44,6 +57,7 @@ function interleaveByMode() {
 
 export function StoriesPageClient({ initialPage }: { initialPage: number }) {
   const { lang } = useLang();
+  const t = copy[lang];
   const mixedStories = interleaveByMode();
   const totalPages = Math.max(1, Math.ceil(stories.length / ITEMS_PER_PAGE));
   const currentPage = Math.min(Math.max(initialPage, 1), totalPages);
@@ -54,15 +68,11 @@ export function StoriesPageClient({ initialPage }: { initialPage: number }) {
       <TopNav active="stories" />
       <section className="panel sectionBlock stack">
         <div className="pageHeader">
-          <span className="eyebrow">AI Divination</span>
+          {t.eyebrow && <span className="eyebrow">{t.eyebrow}</span>}
           <h1 className="title" style={{ maxWidth: "none", marginInline: "auto" }}>
-            {lang === "zh" ? "故事专栏" : "Story Library"}
+            {t.stories.title}
           </h1>
-          <p className="subtitle">
-            {lang === "zh"
-              ? "精选神秘与经典叙事，结合 AI 占卜视角，帮助你把故事情节转化为现实判断与行动。"
-              : "Curated classic and mystical narratives with an AI Divination lens, turning story tension into practical reflection and action."}
-          </p>
+          <p className="subtitle">{t.stories.subtitle}</p>
         </div>
         <div className="insightList">
           {pageItems.map((item) => {
@@ -72,8 +82,8 @@ export function StoriesPageClient({ initialPage }: { initialPage: number }) {
                 <span className="storyCardBadge">{modeTag[lang][item.mode]}</span>
                 <h2>{content.title}</h2>
                 <p>{content.teaser}</p>
-                <Link className="btn" title={lang === "zh" ? `进入故事详情：${content.title}` : `Open story detail: ${content.title}`} href={`/stories/${item.slug}`}>
-                  {lang === "zh" ? "进入故事" : "Read Story"}
+                <Link className="btn" href={`/stories/${item.slug}`}>
+                  {t.stories.readStory}
                 </Link>
               </article>
             );
@@ -82,24 +92,22 @@ export function StoriesPageClient({ initialPage }: { initialPage: number }) {
         <div className="paginationRow">
           <Link
             href={`/stories?page=${Math.max(1, currentPage - 1)}`}
-            title={lang === "zh" ? "切换到上一页故事" : "Go to previous story page"}
             className={`btn secondary ${currentPage === 1 ? "isDisabled" : ""}`}
             aria-disabled={currentPage === 1}
             tabIndex={currentPage === 1 ? -1 : undefined}
           >
-            {lang === "zh" ? "上一页" : "Previous"}
+            {t.stories.prevPage}
           </Link>
           <div className="paginationInfo">
-            {lang === "zh" ? `第 ${currentPage} / ${totalPages} 页` : `Page ${currentPage} / ${totalPages}`}
+            {t.stories.pageOf} {currentPage} {t.stories.of} {totalPages}
           </div>
           <Link
             href={`/stories?page=${Math.min(totalPages, currentPage + 1)}`}
-            title={lang === "zh" ? "切换到下一页故事" : "Go to next story page"}
             className={`btn secondary ${currentPage === totalPages ? "isDisabled" : ""}`}
             aria-disabled={currentPage === totalPages}
             tabIndex={currentPage === totalPages ? -1 : undefined}
           >
-            {lang === "zh" ? "下一页" : "Next"}
+            {t.stories.nextPage}
           </Link>
         </div>
       </section>

@@ -4,16 +4,18 @@ import Link from "next/link";
 import { TopNav } from "@/components/top-nav";
 import { insights } from "@/lib/insights";
 import { useLang } from "@/lib/client";
+import { copy } from "@/lib/i18n";
 
 export function InsightsPageClient() {
   const { lang } = useLang();
+  const t = copy[lang];
 
   return (
     <main className="shell">
       <TopNav active="insights" />
       <section className="panel sectionBlock stack">
         <div className="pageHeader">
-          <span className="eyebrow">AI Divination</span>
+          {t.eyebrow && <span className="eyebrow">{t.eyebrow}</span>}
           <h1 className="title" style={{ maxWidth: "none", marginInline: "auto" }}>
             {lang === "zh" ? "模式洞察" : "Mode Stories"}
           </h1>

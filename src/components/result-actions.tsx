@@ -2,6 +2,7 @@
 
 import { RefObject, useState } from "react";
 import { useLang } from "@/lib/client";
+import { copy } from "@/lib/i18n";
 
 type Props = {
   targetRef: RefObject<HTMLElement | null>;
@@ -10,11 +11,10 @@ type Props = {
 
 export function ResultActions({ targetRef, mode }: Props) {
   const { lang } = useLang();
+  const t = copy[lang];
   const [busy, setBusy] = useState(false);
   const pageUrl = typeof window !== "undefined" ? window.location.href : "";
-  const shareText = lang === "zh"
-    ? "我在 AI Divination 的占卜结果，来看看你的解读。"
-    : "I got my reading result on AI Divination. Check your own result.";
+  const shareText = t.ui.shareText;
 
   async function downloadImage() {
     if (!targetRef.current || busy) return;
@@ -49,13 +49,13 @@ export function ResultActions({ targetRef, mode }: Props) {
   return (
     <div className="resultActions">
       <button className="btn" type="button" onClick={downloadImage} disabled={busy}>
-        {busy ? (lang === "zh" ? "生成中..." : "Generating...") : (lang === "zh" ? "下载图片" : "Download Image")}
+        {busy ? t.ui.generating : t.ui.downloadImage}
       </button>
       <button className="btn secondary" type="button" onClick={shareOnX}>
-        {lang === "zh" ? "分享到 X" : "Share on X"}
+        {t.ui.shareOnX}
       </button>
       <button className="btn secondary" type="button" onClick={shareOnFacebook}>
-        {lang === "zh" ? "分享到 Facebook" : "Share on Facebook"}
+        {t.ui.shareOnFacebook}
       </button>
     </div>
   );

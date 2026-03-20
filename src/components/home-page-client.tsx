@@ -9,17 +9,11 @@ import { stories } from "@/lib/stories";
 export function HomePageClient() {
   const { lang } = useLang();
   const t = copy[lang];
-  const insightRows = lang === "zh"
-    ? [
-        { label: "体验定位", value: "娱乐体验 + 自我复盘" },
-        { label: "使用场景", value: "职业、社交、内容分享、自我探索" },
-        { label: "产品风格", value: "轻松、温和、可持续使用" }
-      ]
-    : [
-        { label: "Positioning", value: "Entertainment + reflection" },
-        { label: "Use cases", value: "Career, social, content, self-discovery" },
-        { label: "Experience style", value: "Lightweight, warm, and repeatable" }
-      ];
+  const insightRows = [
+    { label: t.home.insightLabel1, value: t.home.insightValue1 },
+    { label: t.home.insightLabel2, value: t.home.insightValue2 },
+    { label: t.home.insightLabel3, value: t.home.insightValue3 }
+  ];
   const featuredStories = stories.slice(0, 4);
 
   return (
@@ -27,21 +21,17 @@ export function HomePageClient() {
       <TopNav active="home" />
       <section className="panel heroPanel">
         <div className="heroTitleWrap">
-          <span className="eyebrow">{lang === "zh" ? "AI 灵感探索体验" : "AI guidance playground"}</span>
-          <h1 className="title">
-            {lang === "zh"
-              ? "把塔罗、职业洞察与自我探索，做成更好用的日常体验"
-              : "Turn tarot, career reflection, and self-discovery into a daily, delightful experience"}
-          </h1>
+          <span className="eyebrow">{t.home.eyebrow}</span>
+          <h1 className="title">{t.home.heroTitle}</h1>
           <p className="subtitle">{t.home.subtitle}</p>
           <div className="heroActions">
-            <Link href="/career" title={lang === "zh" ? "开始职业 AI 占卜分析" : "Start Career AI reading"} className="btn primary">{t.common.start}</Link>
-            <a href="#modes" title={lang === "zh" ? "查看五种 AI 占卜体验模式" : "Explore all five AI divination modes"} className="btn secondary">{lang === "zh" ? "查看五种体验" : "Explore all five modes"}</a>
+            <Link href="/career" title={t.career.title} className="btn primary">{t.common.start}</Link>
+            <a href="#modes" className="btn secondary">{t.home.exploreAll}</a>
           </div>
           <div className="heroBadges">
-            <span className="badgeChip">{lang === "zh" ? "轻松探索优先" : "Fun-first guidance"}</span>
-            <span className="badgeChip">{lang === "zh" ? "适合社交分享" : "Built for social sharing"}</span>
-            <span className="badgeChip">{lang === "zh" ? "即时反馈体验" : "Instant feedback"}</span>
+            <span className="badgeChip">{t.home.badgeFun}</span>
+            <span className="badgeChip">{t.home.badgeSocial}</span>
+            <span className="badgeChip">{t.home.badgeInstant}</span>
           </div>
         </div>
         <div className="heroInsightCard">
@@ -61,71 +51,71 @@ export function HomePageClient() {
       <section className="panel sectionBlock" id="modes">
         <div className="sectionHeading">
           <h2>{t.home.cardsTitle}</h2>
-          <p>{lang === "zh" ? "五种入口覆盖高频探索路径：卡牌、职业、面部画像、手相叙事与梦境符号。" : "Five entry points cover tarot, career, face, palm, and dream-symbol interpretation in one flow."}</p>
+          <p>{t.home.modesDesc}</p>
         </div>
         <div className="grid">
           <article className="card">
             <div className="cardHeader">
               <span className="cardIcon">🔮</span>
               <div>
-                <h3>{lang === "zh" ? "灵感卡图" : "Insight Cards"}</h3>
-                <div className="cardTag">{lang === "zh" ? "AI 塔罗解读" : "AI tarot reading"}</div>
+                <h3>{t.home.tarotName}</h3>
+                <div className="cardTag">{t.home.tarotTag}</div>
               </div>
             </div>
             <p>{t.home.tarotDesc}</p>
-            <Link href="/tarot" title={lang === "zh" ? "进入塔罗 AI 占卜" : "Open Tarot AI divination"} className="btn">{lang === "zh" ? "开启塔罗" : "Open tarot"}</Link>
+            <Link href="/tarot" className="btn">{t.home.tarotCta}</Link>
           </article>
           <article className="card">
             <div className="cardHeader">
               <span className="cardIcon">⚡</span>
               <div>
-                <h3>{lang === "zh" ? "成长轨迹" : "Growth Path"}</h3>
-                <div className="cardTag">{lang === "zh" ? "AI 职业洞察" : "AI career reading"}</div>
+                <h3>{t.home.careerName}</h3>
+                <div className="cardTag">{t.home.careerTag}</div>
               </div>
             </div>
             <p>{t.home.careerDesc}</p>
-            <Link href="/career" title={lang === "zh" ? "进入职业 AI 占卜" : "Open Career AI divination"} className="btn">{lang === "zh" ? "生成分析" : "Generate reading"}</Link>
+            <Link href="/career" className="btn">{t.home.careerCta}</Link>
           </article>
           <article className="card">
             <div className="cardHeader">
               <span className="cardIcon">🪞</span>
               <div>
-                <h3>{lang === "zh" ? "性格映像" : "Personality Lens"}</h3>
-                <div className="cardTag">{lang === "zh" ? "AI 面相解读" : "AI face reading"}</div>
+                <h3>{t.home.faceName}</h3>
+                <div className="cardTag">{t.home.faceTag}</div>
               </div>
             </div>
             <p>{t.home.faceDesc}</p>
-            <Link href="/face" title={lang === "zh" ? "进入面相 AI 占卜" : "Open Face AI divination"} className="btn">{lang === "zh" ? "开始识别" : "Start reading"}</Link>
+            <Link href="/face" className="btn">{t.home.faceCta}</Link>
           </article>
           <article className="card">
             <div className="cardHeader">
               <span className="cardIcon">🖐️</span>
               <div>
-                <h3>{lang === "zh" ? "人生节律" : "Life Rhythm"}</h3>
-                <div className="cardTag">{lang === "zh" ? "AI 手相解读" : "AI palm reading"}</div>
+                <h3>{t.home.palmName}</h3>
+                <div className="cardTag">{t.home.palmTag}</div>
               </div>
             </div>
             <p>{t.home.palmDesc}</p>
-            <Link href="/palm" title={lang === "zh" ? "进入手相 AI 占卜" : "Open Palm AI divination"} className="btn">{lang === "zh" ? "查看手相" : "Read your palm"}</Link>
+            <Link href="/palm" className="btn">{t.home.palmCta}</Link>
           </article>
           <article className="card">
             <div className="cardHeader">
               <span className="cardIcon">🌙</span>
               <div>
-                <h3>{lang === "zh" ? "潜意识信号" : "Subconscious Signals"}</h3>
-                <div className="cardTag">{lang === "zh" ? "AI 梦境解析" : "AI dream interpretation"}</div>
+                <h3>{t.home.dreamName}</h3>
+                <div className="cardTag">{t.home.dreamTag}</div>
               </div>
             </div>
             <p>{t.home.dreamDesc}</p>
-            <Link href="/dream" title={lang === "zh" ? "进入解梦 AI 占卜" : "Open Dream AI divination"} className="btn">{lang === "zh" ? "开始解梦" : "Decode dream"}</Link>
+            <Link href="/dream" className="btn">{t.home.dreamCta}</Link>
           </article>
         </div>
       </section>
 
       <section className="panel sectionBlock">
         <div className="sectionHeading">
-          <h2>{lang === "zh" ? "神秘故事集" : "Mystic Storybook"}</h2>
-          <p>{lang === "zh" ? "精选神秘与经典叙事，帮助你把故事情节转化为现实判断与行动。" : "Curated classic and mystical stories that turn narrative tension into practical reflection and action."}</p>
+          <h2>{t.home.storyTitle}</h2>
+          <p>{t.home.storyDesc}</p>
         </div>
         <div className="storyStrip">
           {featuredStories.map((story) => {
@@ -134,15 +124,15 @@ export function HomePageClient() {
               <article key={story.slug} className="storyMiniCard">
                 <h3>{content.title}</h3>
                 <p>{content.teaser}</p>
-                <Link href={`/stories/${story.slug}`} title={lang === "zh" ? `阅读故事：${content.title}` : `Read story: ${content.title}`} className="storyMiniLink">
-                  {lang === "zh" ? "查看故事" : "Read story"}
+                <Link href={`/stories/${story.slug}`} className="storyMiniLink">
+                  {t.home.storyRead}
                 </Link>
               </article>
             );
           })}
         </div>
         <div className="heroActions" style={{ marginTop: 0 }}>
-          <Link href="/stories" title={lang === "zh" ? "浏览完整故事列表" : "Browse full story list"} className="btn primary">{lang === "zh" ? "浏览故事列表" : "Browse Story List"}</Link>
+          <Link href="/stories" className="btn primary">{t.home.storyBrowse}</Link>
         </div>
       </section>
     </main>

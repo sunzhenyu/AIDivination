@@ -66,22 +66,14 @@ export default function TarotPage() {
       <TopNav active="tarot" />
       <section className="panel sectionBlock stack">
         <div className="pageHeader">
-          <span className="eyebrow">AI Divination</span>
+          {t.eyebrow && <span className="eyebrow">{t.eyebrow}</span>}
           <h1 className="title" style={{ maxWidth: "none", marginInline: "auto" }}>{t.tarot.title}</h1>
-          <p className="subtitle">
-            {lang === "zh"
-              ? "AI 塔罗解读：从大牌库随机抽取三张卡牌，逐张翻开并生成叙事建议。"
-              : "AI tarot reading: reveal three randomly drawn cards and turn symbols into practical narrative guidance."}
-          </p>
+          <p className="subtitle">{t.tarot.subtitle}</p>
         </div>
 
         <div className="resultSection" style={{ marginTop: 0 }}>
-          <h4>{lang === "zh" ? "翻牌规则" : "Flip rules"}</h4>
-          <p className="muted">
-            {lang === "zh"
-              ? "先点击“重新洗牌”，再翻开三张牌。三张都翻开后即可生成解读。"
-              : "Shuffle first, then flip all three cards. Reading unlocks after all are revealed."}
-          </p>
+          <h4>{t.tarot.flipRules}</h4>
+          <p className="muted">{t.tarot.flipRulesDesc}</p>
         </div>
 
         <div className="tarotFlipGrid">
@@ -95,10 +87,10 @@ export default function TarotPage() {
               <div className="tarotFlipInner">
                 <div className="tarotFace tarotFront">
                   <span className="tarotQ">?</span>
-                  <span className="tarotHint">{lang === "zh" ? `第 ${index + 1} 张` : `Card ${index + 1}`}</span>
+                  <span className="tarotHint">{t.tarot.cardPrefix} {index + 1}</span>
                 </div>
                 <div className="tarotFace tarotBack">
-                  <span className="tarotPicked">{lang === "zh" ? `已翻开 ${index + 1}` : `Revealed ${index + 1}`}</span>
+                  <span className="tarotPicked">{t.tarot.revealedPrefix} {index + 1}</span>
                   <strong>{lang === "zh" ? card.nameZh : card.nameEn}</strong>
                 </div>
               </div>

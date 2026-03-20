@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { chatJson, hasAiConfig, outputLanguage } from "@/lib/ai";
-import { fallbackCareer } from "@/lib/fallback";
+import { fallbackCareer, toLang } from "@/lib/fallback";
 
 export async function POST(req: NextRequest) {
   const payload = await req.json().catch(() => ({}));
@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
   try {
     const output = outputLanguage(lang);
     if (!hasAiConfig()) {
-      return NextResponse.json(fallbackCareer(name, joinDate, lang === "zh" ? "zh" : "en"));
+      return NextResponse.json(fallbackCareer(name, joinDate, toLang(lang)));
     }
 
     const data = await chatJson(
@@ -54,7 +54,7 @@ Requirements:
     return NextResponse.json(data);
   } catch (error) {
     return NextResponse.json(
-      { ...fallbackCareer(name, joinDate, lang === "zh" ? "zh" : "en"), upstreamError: String(error) },
+      { ...fallbackCareer(name, joinDate, toLang(lang)), upstreamError: String(error) },
       { status: 200 }
     );
   }

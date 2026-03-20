@@ -4,6 +4,7 @@ import Link from "next/link";
 import { TopNav } from "@/components/top-nav";
 import type { Story } from "@/lib/stories";
 import { useLang } from "@/lib/client";
+import { copy } from "@/lib/i18n";
 const modeTitle = {
   en: {
     tarot: "Insight Cards AI Divination Insight",
@@ -16,11 +17,24 @@ const modeTitle = {
     career: "成长轨迹 AI占卜解读",
     face: "性格映像 AI占卜解读",
     palm: "人生节律 AI占卜解读"
+  },
+  fr: {
+    tarot: "Cartes Intuitives · Lecture AI Divination",
+    career: "Trajectoire · Lecture AI Divination",
+    face: "Profil Perso. · Lecture AI Divination",
+    palm: "Rythme de Vie · Lecture AI Divination"
+  },
+  ja: {
+    tarot: "インサイトカード AI占いインサイト",
+    career: "成長の軌跡 AI占いインサイト",
+    face: "パーソナリティ AI占いインサイト",
+    palm: "人生のリズム AI占いインサイト"
   }
 } as const;
 
 export function StoryDetailClient({ story }: { story: Story }) {
   const { lang } = useLang();
+  const t = copy[lang];
   const content = story.content[lang];
 
   return (
@@ -28,17 +42,16 @@ export function StoryDetailClient({ story }: { story: Story }) {
       <TopNav active="stories" />
       <section className="panel sectionBlock stack">
         <div className="pageHeader">
-          <span className="eyebrow">AI Divination</span>
+          {t.eyebrow && <span className="eyebrow">{t.eyebrow}</span>}
           <h1 className="title" style={{ maxWidth: "none", marginInline: "auto" }}>{content.title}</h1>
           <p className="subtitle">
-            {content.subtitle}
-            {lang === "zh" ? "（AI占卜故事视角）" : " (AI Divination story perspective)"}
+            {content.subtitle}{t.stories.perspective}
           </p>
         </div>
 
         <article className="insightBody">
           <section>
-            <h2>{lang === "zh" ? "故事引子" : "Story Opening"}</h2>
+            <h2>{t.stories.storyOpening}</h2>
             <p>{content.teaser}</p>
           </section>
           {content.plot.map((section) => (
@@ -50,7 +63,7 @@ export function StoryDetailClient({ story }: { story: Story }) {
             </section>
           ))}
           <section className="storyTakeaway">
-            <h2>{lang === "zh" ? "主题启示" : "Theme Takeaway"}</h2>
+            <h2>{t.stories.themeTakeaway}</h2>
             <p>{content.themeTakeaway}</p>
           </section>
           <section>
@@ -58,7 +71,7 @@ export function StoryDetailClient({ story }: { story: Story }) {
             <p>{content.modeInsight}</p>
           </section>
           <section>
-            <h2>{lang === "zh" ? "参考来源" : "Source"}</h2>
+            <h2>{t.stories.source}</h2>
             <p className="muted">
               <a href={story.source.url} target="_blank" rel="noreferrer">
                 {story.source.title}
@@ -69,7 +82,7 @@ export function StoryDetailClient({ story }: { story: Story }) {
 
         <div className="resultSection">
           <Link className="btn secondary" href="/stories">
-            {lang === "zh" ? "返回故事列表" : "Back to Story List"}
+            {t.stories.backToList}
           </Link>
         </div>
       </section>

@@ -55,10 +55,12 @@ export function TopNav({ active }: { active: "home" | "tarot" | "career" | "face
           id="language-select"
           className="langSelect"
           value={lang}
-          onChange={(event) => setLang(event.target.value as "en" | "zh")}
+          onChange={(event) => setLang(event.target.value as "en" | "zh" | "fr" | "ja")}
         >
-          <option value="zh">{lang === "zh" ? "中文" : "Chinese"}</option>
-          <option value="en">{lang === "zh" ? "英文" : "English"}</option>
+          <option value="en">{lang === "zh" ? "英文" : lang === "ja" ? "英語" : lang === "fr" ? "Anglais" : "English"}</option>
+          <option value="zh">{lang === "zh" ? "中文" : lang === "ja" ? "中国語" : lang === "fr" ? "Chinois" : "Chinese"}</option>
+          <option value="fr">{lang === "zh" ? "法语" : lang === "ja" ? "フランス語" : lang === "fr" ? "Français" : "French"}</option>
+          <option value="ja">{lang === "zh" ? "日语" : lang === "ja" ? "日本語" : lang === "fr" ? "Japonais" : "Japanese"}</option>
         </select>
       </div>
     </header>

@@ -21,7 +21,7 @@ export function LangProvider({ children }: { children: React.ReactNode }) {
     };
     const onLangChange = (event: Event) => {
       const next = (event as CustomEvent<Lang>).detail;
-      if (next === "en" || next === "zh") {
+      if (next === "en" || next === "zh" || next === "fr" || next === "ja") {
         setLangState(next);
       }
     };
@@ -42,7 +42,8 @@ export function LangProvider({ children }: { children: React.ReactNode }) {
   };
 
   const toggleLang = () => {
-    const next: Lang = lang === "en" ? "zh" : "en";
+    const langs: Lang[] = ["en", "zh", "fr", "ja"];
+    const next = langs[(langs.indexOf(lang) + 1) % langs.length];
     setLang(next);
   };
 

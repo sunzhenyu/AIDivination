@@ -74,36 +74,32 @@ export default function CareerResultPage() {
       <TopNav active="career" />
       <section className="panel sectionBlock resultCard" ref={captureRef}>
         <div className="resultHeader">
-          <h2 className="resultTitle">{lang === "zh" ? "职业占卜结果" : "Career Reading Result"}</h2>
-          <p className="resultSubtitle">
-            {lang === "zh"
-              ? "用结构化方式呈现你的阶段趋势与行动建议。"
-              : "A structured profile of your current momentum and practical next moves."}
-          </p>
+          <h2 className="resultTitle">{t.labels.careerResultTitle}</h2>
+          <p className="resultSubtitle">{t.labels.careerResultSubtitle}</p>
         </div>
         {error ? <p className="muted">{error}</p> : null}
         {!data ? <p className="muted">{t.common.noData}</p> : (
           <>
             <div className="resultSection">
-              <h3 className="sectionTitle">{lang === "zh" ? "基础信息" : "Basic Information"}</h3>
+              <h3 className="sectionTitle">{t.labels.basicInfo}</h3>
               <div className="splitMeta">
                 <p><strong>{t.career.name}:</strong> {data.name}</p>
                 <p><strong>{t.career.date}:</strong> {data.joinDate}</p>
               </div>
             </div>
             <div className="resultSection">
-              <h3 className="sectionTitle">{lang === "zh" ? "职业关键词" : "Career Keywords"}</h3>
+              <h3 className="sectionTitle">{t.labels.careerKeywords}</h3>
               <div className="keyValue">{data.keywords}</div>
             </div>
             {data.narrativeSummary ? (
               <div className="resultSection">
-                <h3 className="sectionTitle">{lang === "zh" ? "阶段故事线" : "Narrative Summary"}</h3>
+                <h3 className="sectionTitle">{t.labels.narrativeSummary}</h3>
                 <p>{data.narrativeSummary}</p>
               </div>
             ) : null}
             {data.historicalFigure ? (
               <div className="resultSection">
-                <h3 className="sectionTitle">{lang === "zh" ? "历史人物匹配" : "Historical Match"}</h3>
+                <h3 className="sectionTitle">{t.labels.historicalMatch}</h3>
                 <div className="historicalMatch">
                   <div className="historicalFigure">
                     <div className="historicalAvatar">{String(data.historicalFigure.name || "?").charAt(0)}</div>
@@ -113,7 +109,7 @@ export default function CareerResultPage() {
                       <p className="historicalDesc">{data.historicalFigure.description}</p>
                       {data.historicalFigure.story ? <p className="historicalDesc">{data.historicalFigure.story}</p> : null}
                       <p className="historicalReason">
-                        <strong>{lang === "zh" ? "匹配理由：" : "Reason:"}</strong> {data.historicalFigure.matchReason}
+                        <strong>{t.labels.matchReason}</strong> {data.historicalFigure.matchReason}
                       </p>
                       {Array.isArray(data.historicalFigure.achievements) && data.historicalFigure.achievements.length ? (
                         <div className="achievementList">
@@ -128,14 +124,14 @@ export default function CareerResultPage() {
                 </div>
               </div>
             ) : null}
-            <div className="resultSection"><h3 className="sectionTitle">{lang === "zh" ? "阶段趋势" : "Trends"}</h3><ul>{(data.trends || []).map((x) => <li key={x}>{x}</li>)}</ul></div>
+            <div className="resultSection"><h3 className="sectionTitle">{t.labels.trends}</h3><ul>{(data.trends || []).map((x) => <li key={x}>{x}</li>)}</ul></div>
             <div className="resultSection">
-              <h3 className="sectionTitle">{lang === "zh" ? "优劣势分析" : "Strengths & Weaknesses"}</h3>
-              <p><strong>{lang === "zh" ? "优势：" : "Strengths:"}</strong> {Array.isArray(data.strengths) ? data.strengths.join(" · ") : data.strengths}</p>
-              <p><strong>{lang === "zh" ? "短板：" : "Weaknesses:"}</strong> {Array.isArray(data.weaknesses) ? data.weaknesses.join(" · ") : data.weaknesses}</p>
+              <h3 className="sectionTitle">{t.labels.strengthsWeaknesses}</h3>
+              <p><strong>{t.labels.strengths}</strong> {Array.isArray(data.strengths) ? data.strengths.join(" · ") : data.strengths}</p>
+              <p><strong>{t.labels.weaknesses}</strong> {Array.isArray(data.weaknesses) ? data.weaknesses.join(" · ") : data.weaknesses}</p>
               <ul>{(data.careerAdvice || []).map((x) => <li key={x}>{x}</li>)}</ul>
             </div>
-            <div className="resultSection"><h3 className="sectionTitle">{lang === "zh" ? "行动建议" : "Action Advice"}</h3><ul>{(data.advice || []).map((x) => <li key={x}>{x}</li>)}</ul></div>
+            <div className="resultSection"><h3 className="sectionTitle">{t.labels.actionAdvice}</h3><ul>{(data.advice || []).map((x) => <li key={x}>{x}</li>)}</ul></div>
           </>
         )}
         <ResultActions targetRef={captureRef} mode="career" />

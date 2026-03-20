@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { chatJson, hasAiConfig, outputLanguage } from "@/lib/ai";
-import { fallbackFace } from "@/lib/fallback";
+import { fallbackFace, toLang } from "@/lib/fallback";
 
 export async function POST(req: NextRequest) {
   let lang = "en";
@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
 
     const output = outputLanguage(lang);
     if (!hasAiConfig()) {
-      return NextResponse.json(fallbackFace(lang === "zh" ? "zh" : "en"));
+      return NextResponse.json(fallbackFace(toLang(lang)));
     }
     const data = await chatJson(
       `You are a face-reading storyteller and structured guidance writer.
@@ -57,6 +57,6 @@ Requirements:
 
     return NextResponse.json(data);
   } catch (error) {
-    return NextResponse.json({ ...fallbackFace(lang === "zh" ? "zh" : "en"), upstreamError: String(error) }, { status: 200 });
+    return NextResponse.json({ ...fallbackFace(toLang(lang)), upstreamError: String(error) }, { status: 200 });
   }
 }

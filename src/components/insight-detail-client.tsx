@@ -4,9 +4,11 @@ import Link from "next/link";
 import { TopNav } from "@/components/top-nav";
 import type { Insight } from "@/lib/insights";
 import { useLang } from "@/lib/client";
+import { copy } from "@/lib/i18n";
 
 export function InsightDetailClient({ article }: { article: Insight }) {
   const { lang } = useLang();
+  const t = copy[lang];
   const content = article.content[lang];
 
   return (
@@ -14,7 +16,7 @@ export function InsightDetailClient({ article }: { article: Insight }) {
       <TopNav active="insights" />
       <section className="panel sectionBlock stack">
         <div className="pageHeader">
-          <span className="eyebrow">AI Divination</span>
+          {t.eyebrow && <span className="eyebrow">{t.eyebrow}</span>}
           <h1 className="title" style={{ maxWidth: "none", marginInline: "auto" }}>{content.title}</h1>
           <p className="subtitle">{content.description}</p>
           <p className="muted">

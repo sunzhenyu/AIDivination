@@ -57,7 +57,7 @@ export default function FacePage() {
       }
       setError("");
     } catch {
-      setError(lang === "zh" ? "无法启动相机，请检查浏览器权限设置。" : "Unable to open camera. Check browser permissions.");
+      setError(t.ui.cameraError);
     }
   }
 
@@ -134,27 +134,19 @@ export default function FacePage() {
       <TopNav active="face" />
       <section className="panel sectionBlock stack">
         <div className="pageHeader">
-          <span className="eyebrow">AI Divination</span>
+          {t.eyebrow && <span className="eyebrow">{t.eyebrow}</span>}
           <h1 className="title" style={{ maxWidth: "none", marginInline: "auto" }}>{t.face.title}</h1>
-          <p className="subtitle">
-            {lang === "zh"
-              ? "AI 面相解读：上传清晰正脸，获得性格倾向与沟通风格线索。"
-              : "AI face reading: upload a clear portrait to uncover personality tendencies and communication cues."}
-          </p>
+          <p className="subtitle">{t.face.subtitle}</p>
         </div>
         <div className="resultSection" style={{ marginTop: 0 }}>
-          <h4>{lang === "zh" ? "上传建议" : "Upload guidance"}</h4>
-          <p className="muted">
-            {lang === "zh"
-              ? "建议使用自然光、无遮挡、正面视角图片，以获得更稳定的分析结果。"
-              : "Use natural light, a front-facing angle, and minimal occlusion for best results."}
-          </p>
+          <h4>{t.face.uploadGuidance}</h4>
+          <p className="muted">{t.face.uploadGuidanceDesc}</p>
         </div>
 
         <div className="mediaActions">
-          <label className="btn secondary" htmlFor="faceImageInput">{lang === "zh" ? "选择图片" : "Choose image"}</label>
+          <label className="btn secondary" htmlFor="faceImageInput">{t.ui.chooseImage}</label>
           <button type="button" className="btn secondary" onClick={() => openCamera()}>
-            {lang === "zh" ? "开启相机" : "Open camera"}
+            {t.ui.openCamera}
           </button>
         </div>
         <input id="faceImageInput" className="fileInputHidden" type="file" accept="image/*" onChange={onFileChange} />
@@ -163,9 +155,9 @@ export default function FacePage() {
           <div className="mediaCard cameraWrap">
             <video ref={videoRef} className="cameraVideo" autoPlay playsInline />
             <div className="mediaActions">
-              <button type="button" className="btn secondary" onClick={switchCamera}>{lang === "zh" ? "切换相机" : "Switch camera"}</button>
-              <button type="button" className="btn secondary" onClick={capturePhoto}>{lang === "zh" ? "拍照" : "Capture"}</button>
-              <button type="button" className="btn secondary" onClick={closeCamera}>{lang === "zh" ? "关闭相机" : "Close camera"}</button>
+              <button type="button" className="btn secondary" onClick={switchCamera}>{t.ui.switchCamera}</button>
+              <button type="button" className="btn secondary" onClick={capturePhoto}>{t.ui.capture}</button>
+              <button type="button" className="btn secondary" onClick={closeCamera}>{t.ui.closeCamera}</button>
             </div>
           </div>
         ) : null}
@@ -175,7 +167,7 @@ export default function FacePage() {
             <img className="mediaPreview" src={previewUrl} alt="face preview" />
             <p className="muted fileMeta">{fileName}</p>
             <div className="mediaActions">
-              <button type="button" className="btn secondary" onClick={resetSelection}>{lang === "zh" ? "重新拍摄/选择" : "Retake"}</button>
+              <button type="button" className="btn secondary" onClick={resetSelection}>{t.ui.retake}</button>
               <button type="button" className="btn" disabled={loading} onClick={analyze}>{loading ? t.common.loading : t.face.action}</button>
             </div>
           </div>

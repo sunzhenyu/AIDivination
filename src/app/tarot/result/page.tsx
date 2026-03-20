@@ -87,18 +87,14 @@ export default function TarotResultPage() {
       <TopNav active="tarot" />
       <section className="panel sectionBlock resultCard" ref={captureRef}>
         <div className="resultHeader">
-          <h2 className="resultTitle">{lang === "zh" ? "塔罗牌占卜结果" : "Tarot Reading Result"}</h2>
-          <p className="resultSubtitle">
-            {lang === "zh"
-              ? "基于三张牌的阶段性解读，供你参考与复盘。"
-              : "A structured phase reading based on your three-card spread."}
-          </p>
+          <h2 className="resultTitle">{t.labels.tarotResultTitle}</h2>
+          <p className="resultSubtitle">{t.labels.tarotResultSubtitle}</p>
         </div>
         {error ? <p className="muted">{error}</p> : null}
         {!data ? <p className="muted">{t.common.noData}</p> : (
           <>
             <div className="resultSection">
-              <h3 className="sectionTitle">{lang === "zh" ? "牌面信息" : "Cards"}</h3>
+              <h3 className="sectionTitle">{t.labels.tarotCards}</h3>
               <div className="tarotCardsGrid">
                 {(data.cards || []).map((x, i) => (
                   <article className="resultTarotCard" key={`${x.name}-${i}`}>
@@ -108,10 +104,10 @@ export default function TarotResultPage() {
                 ))}
               </div>
             </div>
-            <div className="resultSection"><h3 className="sectionTitle">{lang === "zh" ? "整体趋势" : "Overview"}</h3><ul>{(data.overview || []).map((x) => <li key={x}>{x}</li>)}</ul></div>
+            <div className="resultSection"><h3 className="sectionTitle">{t.labels.overview}</h3><ul>{(data.overview || []).map((x) => <li key={x}>{x}</li>)}</ul></div>
             {data.historicalFigure ? (
               <div className="resultSection">
-                <h3 className="sectionTitle">{lang === "zh" ? "历史人物匹配" : "Historical Match"}</h3>
+                <h3 className="sectionTitle">{t.labels.historicalMatch}</h3>
                 <div className="historicalMatch">
                   <div className="historicalFigure">
                     <div className="historicalAvatar">{String(data.historicalFigure.name || "?").charAt(0)}</div>
@@ -121,7 +117,7 @@ export default function TarotResultPage() {
                       <p className="historicalDesc">{data.historicalFigure.description}</p>
                       {data.historicalFigure.story ? <p className="historicalDesc">{data.historicalFigure.story}</p> : null}
                       <p className="historicalReason">
-                        <strong>{lang === "zh" ? "匹配理由：" : "Reason:"}</strong> {data.historicalFigure.matchReason}
+                        <strong>{t.labels.matchReason}</strong> {data.historicalFigure.matchReason}
                       </p>
                       {Array.isArray(data.historicalFigure.achievements) && data.historicalFigure.achievements.length ? (
                         <div className="achievementList">
@@ -136,11 +132,11 @@ export default function TarotResultPage() {
                 </div>
               </div>
             ) : null}
-            <div className="resultSection"><h3 className="sectionTitle">{lang === "zh" ? "职业方向" : "Career"}</h3><ul>{(data.career || []).map((x) => <li key={x}>{x}</li>)}</ul></div>
-            <div className="resultSection"><h3 className="sectionTitle">{lang === "zh" ? "财务节奏" : "Wealth"}</h3><ul>{(data.wealth || []).map((x) => <li key={x}>{x}</li>)}</ul></div>
-            <div className="resultSection"><h3 className="sectionTitle">{lang === "zh" ? "关系互动" : "Relationship"}</h3><ul>{(data.relationship || []).map((x) => <li key={x}>{x}</li>)}</ul></div>
-            <div className="resultSection"><h3 className="sectionTitle">{lang === "zh" ? "近期预测" : "Predictions"}</h3><ul>{(data.predictions || []).map((x) => <li key={x}>{x}</li>)}</ul></div>
-            <div className="resultSection"><h3 className="sectionTitle">{lang === "zh" ? "行动建议" : "Advice"}</h3><ul>{(data.advice || []).map((x) => <li key={x}>{x}</li>)}</ul></div>
+            <div className="resultSection"><h3 className="sectionTitle">{t.labels.careerSection}</h3><ul>{(data.career || []).map((x) => <li key={x}>{x}</li>)}</ul></div>
+            <div className="resultSection"><h3 className="sectionTitle">{t.labels.wealth}</h3><ul>{(data.wealth || []).map((x) => <li key={x}>{x}</li>)}</ul></div>
+            <div className="resultSection"><h3 className="sectionTitle">{t.labels.relationship}</h3><ul>{(data.relationship || []).map((x) => <li key={x}>{x}</li>)}</ul></div>
+            <div className="resultSection"><h3 className="sectionTitle">{t.labels.predictions}</h3><ul>{(data.predictions || []).map((x) => <li key={x}>{x}</li>)}</ul></div>
+            <div className="resultSection"><h3 className="sectionTitle">{t.labels.advice}</h3><ul>{(data.advice || []).map((x) => <li key={x}>{x}</li>)}</ul></div>
           </>
         )}
         <ResultActions targetRef={captureRef} mode="tarot" />
