@@ -138,8 +138,8 @@ export default function PalmPage() {
           <h1 className="title" style={{ maxWidth: "none", marginInline: "auto" }}>{t.palm.title}</h1>
           <p className="subtitle">
             {lang === "zh"
-              ? "上传手掌照片，得到生命线、智慧线、感情线与事业线的故事化解读。"
-              : "Upload a palm photo to receive a narrative reading of life, head, heart, and career lines."}
+              ? "AI 手相解读：上传手掌照片，读懂生命线、智慧线、感情线与事业线节律。"
+              : "AI palm reading: upload your palm photo to decode life, head, heart, and career line rhythms."}
           </p>
         </div>
         <div className="resultSection" style={{ marginTop: 0 }}>

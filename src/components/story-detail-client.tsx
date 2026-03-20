@@ -5,8 +5,18 @@ import { TopNav } from "@/components/top-nav";
 import type { Story } from "@/lib/stories";
 import { useLang } from "@/lib/client";
 const modeTitle = {
-  en: { tarot: "Tarot AI Divination Insight", career: "Career AI Divination Insight", face: "Face AI Divination Insight", palm: "Palm AI Divination Insight" },
-  zh: { tarot: "塔罗AI占卜解读", career: "职业AI占卜解读", face: "面相AI占卜解读", palm: "手相AI占卜解读" }
+  en: {
+    tarot: "Insight Cards AI Divination Insight",
+    career: "Growth Path AI Divination Insight",
+    face: "Personality Lens AI Divination Insight",
+    palm: "Life Rhythm AI Divination Insight"
+  },
+  zh: {
+    tarot: "灵感卡图 AI占卜解读",
+    career: "成长轨迹 AI占卜解读",
+    face: "性格映像 AI占卜解读",
+    palm: "人生节律 AI占卜解读"
+  }
 } as const;
 
 export function StoryDetailClient({ story }: { story: Story }) {
@@ -20,7 +30,10 @@ export function StoryDetailClient({ story }: { story: Story }) {
         <div className="pageHeader">
           <span className="eyebrow">AI Divination</span>
           <h1 className="title" style={{ maxWidth: "none", marginInline: "auto" }}>{content.title}</h1>
-          <p className="subtitle">{content.subtitle}</p>
+          <p className="subtitle">
+            {content.subtitle}
+            {lang === "zh" ? "（AI占卜故事视角）" : " (AI Divination story perspective)"}
+          </p>
         </div>
 
         <article className="insightBody">

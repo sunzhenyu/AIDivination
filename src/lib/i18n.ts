@@ -6,7 +6,7 @@ export const STORAGE_KEY = "aidivination-language";
 export const copy = {
   en: {
     brand: "AI Divination",
-    nav: { home: "Home", tarot: "Tarot", career: "Career", face: "Face", palm: "Palm", dream: "Dream", stories: "Stories", insights: "Stories" },
+    nav: { home: "Home", ai: "AI Divination", tarot: "Insight Cards", career: "Growth Path", face: "Personality Lens", palm: "Life Rhythm", dream: "Subconscious Signals", stories: "Story Library", insights: "Story Library" },
     common: {
       start: "Start",
       backHome: "Back to Home",
@@ -15,8 +15,8 @@ export const copy = {
       apiUnavailable: "Analysis service is unavailable right now. Please try again later."
     },
     home: {
-      title: "AI guidance for tarot, career, face and palm journeys",
-      subtitle: "Choose a mode and get a shareable, low-pressure reading.",
+      title: "AI Divination guidance for tarot, career, face and palm journeys",
+      subtitle: "Choose an AI Divination mode and get a shareable, low-pressure reading.",
       cardsTitle: "Choose Your Mode",
       tarotDesc: "Three-card reading with career, wealth and relationship cues.",
       careerDesc: "Generate a structured career profile and practical suggestions.",
@@ -24,11 +24,11 @@ export const copy = {
       palmDesc: "Analyze palm lines and get near-term rhythm suggestions.",
       dreamDesc: "Type your dream and decode symbols, emotions, and practical life hints."
     },
-    career: { title: "Career Compass", name: "Name", date: "Start date", action: "Generate Reading", transition: "Mapping your career pattern..." },
-    face: { title: "Face Reading", action: "Analyze Face", transition: "Decoding your face profile..." },
-    palm: { title: "Palm Reading", action: "Analyze Palm", transition: "Reading your palm rhythm..." },
-    dream: { title: "Dream Decoder", action: "Decode Dream", transition: "Unfolding your dream symbols..." },
-    tarot: { title: "Tarot Reading", action: "Generate Reading", shuffle: "Shuffle cards", reveal: "Generate reading", transition: "Reading your symbolic patterns..." },
+    career: { title: "Growth Path", name: "Name", date: "Start date", action: "Generate Reading", transition: "Mapping your growth trajectory..." },
+    face: { title: "Personality Lens", action: "Analyze Profile", transition: "Decoding your personality cues..." },
+    palm: { title: "Life Rhythm", action: "Analyze Rhythm", transition: "Reading your rhythm patterns..." },
+    dream: { title: "Subconscious Signals", action: "Decode Dream", transition: "Unfolding your subconscious symbols..." },
+    tarot: { title: "Insight Cards", action: "Generate Reading", shuffle: "Shuffle cards", reveal: "Generate reading", transition: "Reading your symbolic patterns..." },
     result: { title: "Reading Result" },
     footer: {
       tagline: "Reflective rituals and practical guidance, all in one place.",
@@ -47,7 +47,7 @@ export const copy = {
   },
   zh: {
     brand: "AI Divination",
-    nav: { home: "首页", tarot: "塔罗", career: "职业", face: "面相", palm: "手相", dream: "解梦", stories: "故事", insights: "故事" },
+    nav: { home: "首页", ai: "AI占卜", tarot: "灵感卡图", career: "成长轨迹", face: "性格映像", palm: "人生节律", dream: "潜意识", stories: "故事", insights: "故事" },
     common: {
       start: "开始",
       backHome: "返回首页",
@@ -65,11 +65,11 @@ export const copy = {
       palmDesc: "掌纹分析结合阶段节奏建议，适合日常复盘。",
       dreamDesc: "输入你的梦境内容，解码象征、情绪线索与现实启发。"
     },
-    tarot: { title: "塔罗占卜", action: "生成解读", shuffle: "洗牌", reveal: "生成解读", transition: "正在解析命运线索..." },
-    career: { title: "职业罗盘", name: "姓名", date: "入职日期", action: "生成命盘", transition: "正在计算职业画像..." },
-    face: { title: "面相解读", action: "开始分析", transition: "正在解析气质密码..." },
-    palm: { title: "手相解读", action: "开始分析", transition: "正在解析掌纹节奏..." },
-    dream: { title: "梦境解读", action: "开始解梦", transition: "正在解析梦境符号..." },
+    tarot: { title: "灵感卡图", action: "生成解读", shuffle: "洗牌", reveal: "生成解读", transition: "正在解析卡图象征..." },
+    career: { title: "成长轨迹", name: "姓名", date: "入职日期", action: "生成分析", transition: "正在计算成长轨迹..." },
+    face: { title: "性格映像", action: "开始分析", transition: "正在解析性格线索..." },
+    palm: { title: "人生节律", action: "开始分析", transition: "正在解析节律信号..." },
+    dream: { title: "潜意识信号", action: "开始解梦", transition: "正在解析潜意识符号..." },
     result: { title: "分析结果" },
     footer: {
       tagline: "把仪式感探索与可执行建议整合在同一体验里。",

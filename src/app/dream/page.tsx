@@ -67,8 +67,8 @@ export default function DreamPage() {
           <h1 className="title" style={{ maxWidth: "none", marginInline: "auto" }}>{t.dream.title}</h1>
           <p className="subtitle">
             {lang === "zh"
-              ? "输入你记得的梦境片段，获得象征解码、情绪线索与可执行启发。"
-              : "Describe your dream and receive symbol decoding, emotional cues, and practical life hints."}
+              ? "AI 梦境解析：输入你记得的梦境片段，获得象征解码、情绪线索与现实启发。"
+              : "AI dream interpretation: describe your dream and get symbol decoding, emotional cues, and practical life hints."}
           </p>
         </div>
 

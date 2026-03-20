@@ -138,8 +138,8 @@ export default function FacePage() {
           <h1 className="title" style={{ maxWidth: "none", marginInline: "auto" }}>{t.face.title}</h1>
           <p className="subtitle">
             {lang === "zh"
-              ? "上传清晰正脸照片，获取偏人格与沟通风格的轻量洞察。"
-              : "Upload a clear front photo to get a personality-led reflection and communication cues."}
+              ? "AI 面相解读：上传清晰正脸，获得性格倾向与沟通风格线索。"
+              : "AI face reading: upload a clear portrait to uncover personality tendencies and communication cues."}
           </p>
         </div>
         <div className="resultSection" style={{ marginTop: 0 }}>

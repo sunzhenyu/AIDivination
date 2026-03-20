@@ -57,8 +57,8 @@ export default function CareerPage() {
           <h1 className="title" style={{ maxWidth: "none", marginInline: "auto" }}>{t.career.title}</h1>
           <p className="subtitle">
             {lang === "zh"
-              ? "把“职场命理”转成职业节奏、优势画像与成长建议。"
-              : "Translate workplace destiny into timing, strengths, blind spots, and practical next moves."}
+              ? "AI 职业洞察：把职场信号转成成长节奏、优势画像与下一步行动。"
+              : "AI career reading: translate work signals into growth rhythm, strengths, and practical next steps."}
           </p>
         </div>
 

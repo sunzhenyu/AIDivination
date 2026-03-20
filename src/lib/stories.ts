@@ -199,55 +199,55 @@ const teaserTemplatesZh = [
 
 const modeInsightTemplatesEn: Record<Story["mode"], string[]> = {
   tarot: [
-    `Tarot AI Divination insight: In "{title}", treat the arc as three cards: emotional trigger, conflict pressure, and mature resolution.`,
-    `Tarot AI Divination insight: "{title}" works as a relationship spread where value ranking matters more than temporary emotion.`,
-    `Tarot AI Divination insight: Use "{title}" to read how desire, fear, and responsibility compete in one symbolic timeline.`,
-    `Tarot AI Divination insight: "{title}" highlights that clarity appears after consequence, not before action.`
+    `Insight Cards AI Divination insight: In "{title}", treat the arc as three cards: emotional trigger, conflict pressure, and mature resolution.`,
+    `Insight Cards AI Divination insight: "{title}" works as a relationship spread where value ranking matters more than temporary emotion.`,
+    `Insight Cards AI Divination insight: Use "{title}" to read how desire, fear, and responsibility compete in one symbolic timeline.`,
+    `Insight Cards AI Divination insight: "{title}" highlights that clarity appears after consequence, not before action.`
   ],
   career: [
-    `Career AI Divination insight: "{title}" shows that long-term preparation usually beats short-term brilliance at critical moments.`,
-    `Career AI Divination insight: Read "{title}" as a strategy case on role choice, timing, and accountable execution.`,
-    `Career AI Divination insight: "{title}" reminds you to align values with incentives before committing to a path.`,
-    `Career AI Divination insight: The core lesson in "{title}" is decision ownership under pressure, not perfect conditions.`
+    `Growth Path AI Divination insight: "{title}" shows that long-term preparation usually beats short-term brilliance at critical moments.`,
+    `Growth Path AI Divination insight: Read "{title}" as a strategy case on role choice, timing, and accountable execution.`,
+    `Growth Path AI Divination insight: "{title}" reminds you to align values with incentives before committing to a path.`,
+    `Growth Path AI Divination insight: The core lesson in "{title}" is decision ownership under pressure, not perfect conditions.`
   ],
   face: [
-    `Face AI Divination insight: In "{title}", identity is revealed through expression, reaction, and social posture more than labels.`,
-    `Face AI Divination insight: "{title}" helps you read personality under stress: who masks, who confronts, who adapts.`,
-    `Face AI Divination insight: Use "{title}" to observe how communication style predicts relationship outcomes.`,
-    `Face AI Divination insight: "{title}" demonstrates that behavioral micro-signals often tell the real emotional story.`
+    `Personality Lens AI Divination insight: In "{title}", identity is revealed through expression, reaction, and social posture more than labels.`,
+    `Personality Lens AI Divination insight: "{title}" helps you read personality under stress: who masks, who confronts, who adapts.`,
+    `Personality Lens AI Divination insight: Use "{title}" to observe how communication style predicts relationship outcomes.`,
+    `Personality Lens AI Divination insight: "{title}" demonstrates that behavioral micro-signals often tell the real emotional story.`
   ],
   palm: [
-    `Palm AI Divination insight: "{title}" is a rhythm story; progress appears in waves of effort, pause, and renewed movement.`,
-    `Palm AI Divination insight: Read "{title}" as a timing map for when to push forward and when to consolidate.`,
-    `Palm AI Divination insight: "{title}" teaches that turning points are prepared long before they become visible.`,
-    `Palm AI Divination insight: The pattern in "{title}" supports short-cycle review: observe pace, adjust, then advance.`
+    `Life Rhythm AI Divination insight: "{title}" is a rhythm story; progress appears in waves of effort, pause, and renewed movement.`,
+    `Life Rhythm AI Divination insight: Read "{title}" as a timing map for when to push forward and when to consolidate.`,
+    `Life Rhythm AI Divination insight: "{title}" teaches that turning points are prepared long before they become visible.`,
+    `Life Rhythm AI Divination insight: The pattern in "{title}" supports short-cycle review: observe pace, adjust, then advance.`
   ]
 };
 
 const modeInsightTemplatesZh: Record<Story["mode"], string[]> = {
   tarot: [
-    `塔罗AI占卜解读：在《{title}》里，可以把主线看成三张牌：情绪起点、冲突阻力、成熟选择。`,
-    `塔罗AI占卜解读：《{title}》更像关系牌阵，真正关键是价值排序，而不是一时情绪。`,
-    `塔罗AI占卜解读：借《{title}》可以清楚看到欲望、恐惧与责任如何在同一时间线上竞争。`,
-    `塔罗AI占卜解读：《{title}》提示你，清晰往往在承担后出现，而不是在行动前出现。`
+    `灵感卡图AI占卜解读：在《{title}》里，可以把主线看成三张牌：情绪起点、冲突阻力、成熟选择。`,
+    `灵感卡图AI占卜解读：《{title}》更像关系牌阵，真正关键是价值排序，而不是一时情绪。`,
+    `灵感卡图AI占卜解读：借《{title}》可以清楚看到欲望、恐惧与责任如何在同一时间线上竞争。`,
+    `灵感卡图AI占卜解读：《{title}》提示你，清晰往往在承担后出现，而不是在行动前出现。`
   ],
   career: [
-    `职业AI占卜解读：《{title}》说明关键阶段里，长期准备通常比短期爆发更可靠。`,
-    `职业AI占卜解读：可把《{title}》当成策略案例，重点看角色选择、时机判断与执行闭环。`,
-    `职业AI占卜解读：《{title}》提醒你在做重大决定前，先对齐“价值观”与“激励机制”。`,
-    `职业AI占卜解读：《{title}》的核心不在完美条件，而在压力下的决策承担能力。`
+    `成长轨迹AI占卜解读：《{title}》说明关键阶段里，长期准备通常比短期爆发更可靠。`,
+    `成长轨迹AI占卜解读：可把《{title}》当成策略案例，重点看角色选择、时机判断与执行闭环。`,
+    `成长轨迹AI占卜解读：《{title}》提醒你在做重大决定前，先对齐“价值观”与“激励机制”。`,
+    `成长轨迹AI占卜解读：《{title}》的核心不在完美条件，而在压力下的决策承担能力。`
   ],
   face: [
-    `面相AI占卜解读：在《{title}》中，身份信息更多通过表情、反应和社会姿态被呈现。`,
-    `面相AI占卜解读：《{title}》适合观察压力场景下的人格模式：谁隐藏、谁对抗、谁调整。`,
-    `面相AI占卜解读：借《{title}》可训练你识别“沟通风格”如何提前决定关系走向。`,
-    `面相AI占卜解读：《{title}》证明微小行为信号，往往比口头立场更接近真实情绪。`
+    `性格映像AI占卜解读：在《{title}》中，身份信息更多通过表情、反应和社会姿态被呈现。`,
+    `性格映像AI占卜解读：《{title}》适合观察压力场景下的人格模式：谁隐藏、谁对抗、谁调整。`,
+    `性格映像AI占卜解读：借《{title}》可训练你识别“沟通风格”如何提前决定关系走向。`,
+    `性格映像AI占卜解读：《{title}》证明微小行为信号，往往比口头立场更接近真实情绪。`
   ],
   palm: [
-    `手相AI占卜解读：《{title}》是典型“节奏型叙事”，成长通常以推进、停顿、再推进出现。`,
-    `手相AI占卜解读：把《{title}》当成时机地图，判断何时加速、何时稳住、何时转向。`,
-    `手相AI占卜解读：《{title}》告诉你关键转折并非偶然，而是前期累积到阈值后的结果。`,
-    `手相AI占卜解读：《{title}》适合做短周期复盘模板：看节奏、调步伐、再前进。`
+    `人生节律AI占卜解读：《{title}》是典型“节奏型叙事”，成长通常以推进、停顿、再推进出现。`,
+    `人生节律AI占卜解读：把《{title}》当成时机地图，判断何时加速、何时稳住、何时转向。`,
+    `人生节律AI占卜解读：《{title}》告诉你关键转折并非偶然，而是前期累积到阈值后的结果。`,
+    `人生节律AI占卜解读：《{title}》适合做短周期复盘模板：看节奏、调步伐、再前进。`
   ]
 };
 

@@ -7,8 +7,18 @@ import { useLang } from "@/lib/client";
 
 const ITEMS_PER_PAGE = 10;
 const modeTag = {
-  en: { tarot: "Tarot AI Divination", career: "Career AI Divination", face: "Face AI Divination", palm: "Palm AI Divination" },
-  zh: { tarot: "塔罗AI占卜", career: "职业AI占卜", face: "面相AI占卜", palm: "手相AI占卜" }
+  en: {
+    tarot: "Insight Cards · AI Divination",
+    career: "Growth Path · AI Divination",
+    face: "Personality Lens · AI Divination",
+    palm: "Life Rhythm · AI Divination"
+  },
+  zh: {
+    tarot: "灵感卡图 · AI占卜",
+    career: "成长轨迹 · AI占卜",
+    face: "性格映像 · AI占卜",
+    palm: "人生节律 · AI占卜"
+  }
 } as const;
 
 function interleaveByMode() {
@@ -50,8 +60,8 @@ export function StoriesPageClient({ initialPage }: { initialPage: number }) {
           </h1>
           <p className="subtitle">
             {lang === "zh"
-              ? "精选神秘与经典叙事，帮助你把故事情节转化为现实判断与行动。"
-              : "Curated classic and mystical stories that turn narrative tension into practical reflection and action."}
+              ? "精选神秘与经典叙事，结合 AI 占卜视角，帮助你把故事情节转化为现实判断与行动。"
+              : "Curated classic and mystical narratives with an AI Divination lens, turning story tension into practical reflection and action."}
           </p>
         </div>
         <div className="insightList">

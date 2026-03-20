@@ -68,8 +68,8 @@ export function HomePageClient() {
             <div className="cardHeader">
               <span className="cardIcon">🔮</span>
               <div>
-                <h3>{lang === "zh" ? "塔罗AI占卜" : "Tarot AI Divination"}</h3>
-                <div className="cardTag">{lang === "zh" ? "故事化解读" : "Story-led ritual"}</div>
+                <h3>{lang === "zh" ? "灵感卡图" : "Insight Cards"}</h3>
+                <div className="cardTag">{lang === "zh" ? "AI 塔罗解读" : "AI tarot reading"}</div>
               </div>
             </div>
             <p>{t.home.tarotDesc}</p>
@@ -79,8 +79,8 @@ export function HomePageClient() {
             <div className="cardHeader">
               <span className="cardIcon">⚡</span>
               <div>
-                <h3>{lang === "zh" ? "职业AI占卜" : "Career AI Divination"}</h3>
-                <div className="cardTag">{lang === "zh" ? "现代职业建议" : "Modern work guidance"}</div>
+                <h3>{lang === "zh" ? "成长轨迹" : "Growth Path"}</h3>
+                <div className="cardTag">{lang === "zh" ? "AI 职业洞察" : "AI career reading"}</div>
               </div>
             </div>
             <p>{t.home.careerDesc}</p>
@@ -90,8 +90,8 @@ export function HomePageClient() {
             <div className="cardHeader">
               <span className="cardIcon">🪞</span>
               <div>
-                <h3>{lang === "zh" ? "面相AI占卜" : "Face AI Divination"}</h3>
-                <div className="cardTag">{lang === "zh" ? "人格特征洞察" : "Personality-led reading"}</div>
+                <h3>{lang === "zh" ? "性格映像" : "Personality Lens"}</h3>
+                <div className="cardTag">{lang === "zh" ? "AI 面相解读" : "AI face reading"}</div>
               </div>
             </div>
             <p>{t.home.faceDesc}</p>
@@ -101,8 +101,8 @@ export function HomePageClient() {
             <div className="cardHeader">
               <span className="cardIcon">🖐️</span>
               <div>
-                <h3>{lang === "zh" ? "手相AI占卜" : "Palm AI Divination"}</h3>
-                <div className="cardTag">{lang === "zh" ? "阶段趋势叙事" : "Narrative future cues"}</div>
+                <h3>{lang === "zh" ? "人生节律" : "Life Rhythm"}</h3>
+                <div className="cardTag">{lang === "zh" ? "AI 手相解读" : "AI palm reading"}</div>
               </div>
             </div>
             <p>{t.home.palmDesc}</p>
@@ -112,8 +112,8 @@ export function HomePageClient() {
             <div className="cardHeader">
               <span className="cardIcon">🌙</span>
               <div>
-                <h3>{lang === "zh" ? "解梦AI占卜" : "Dream AI Divination"}</h3>
-                <div className="cardTag">{lang === "zh" ? "梦境符号解码" : "Dream symbol decoding"}</div>
+                <h3>{lang === "zh" ? "潜意识信号" : "Subconscious Signals"}</h3>
+                <div className="cardTag">{lang === "zh" ? "AI 梦境解析" : "AI dream interpretation"}</div>
               </div>
             </div>
             <p>{t.home.dreamDesc}</p>

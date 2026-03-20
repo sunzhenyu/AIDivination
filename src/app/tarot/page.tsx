@@ -70,8 +70,8 @@ export default function TarotPage() {
           <h1 className="title" style={{ maxWidth: "none", marginInline: "auto" }}>{t.tarot.title}</h1>
           <p className="subtitle">
             {lang === "zh"
-              ? "从大牌库中随机抽取三张牌，点击逐张翻开。"
-              : "Three cards are randomly drawn from a large deck. Tap each card to reveal."}
+              ? "AI 塔罗解读：从大牌库随机抽取三张卡牌，逐张翻开并生成叙事建议。"
+              : "AI tarot reading: reveal three randomly drawn cards and turn symbols into practical narrative guidance."}
           </p>
         </div>
 

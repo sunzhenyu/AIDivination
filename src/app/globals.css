@@ -146,8 +146,8 @@ body {
 .navLinks {
   display: flex;
   align-items: center;
-  gap: 6px;
-  flex-wrap: wrap;
+  gap: 8px;
+  flex-wrap: nowrap;
   justify-content: flex-end;
 }
 
@@ -162,6 +162,13 @@ body {
   transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
+button.navLink {
+  appearance: none;
+  background: transparent;
+  font-family: inherit;
+  line-height: 1.2;
+}
+
 .navLink:hover {
   transform: translateY(-1px);
   border-color: rgba(255, 255, 255, 0.15);
@@ -169,6 +176,75 @@ body {
 }
 
 .navLink.active {
+  color: #121018;
+  border-color: rgba(248, 190, 106, 0.4);
+  background: linear-gradient(135deg, rgba(248, 190, 106, 0.92), rgba(255, 122, 107, 0.9));
+}
+
+.navDropdown {
+  position: relative;
+}
+
+.navDropdown::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 12px;
+}
+
+.navDropdownTrigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navDropdownTrigger::after {
+  content: "▾";
+  font-size: 11px;
+  opacity: 0.9;
+}
+
+.navDropdownMenu {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 0;
+  min-width: 240px;
+  padding: 8px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(8, 18, 35, 0.96);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(14px);
+  display: none;
+  z-index: 30;
+}
+
+.navDropdownMenu.open,
+.navDropdown:hover .navDropdownMenu,
+.navDropdown:focus-within .navDropdownMenu {
+  display: grid;
+  gap: 6px;
+}
+
+.navDropdownItem {
+  color: #d2def0;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.navDropdownItem:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.navDropdownItem.active {
   color: #121018;
   border-color: rgba(248, 190, 106, 0.4);
   background: linear-gradient(135deg, rgba(248, 190, 106, 0.92), rgba(255, 122, 107, 0.9));
@@ -1453,15 +1529,24 @@ textarea:focus {
 
   .navLinks {
     width: 100%;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 5px;
+    overflow-x: auto;
+    padding-bottom: 4px;
   }
 
   .navLink {
-    flex: 1;
+    flex: 0 0 auto;
     text-align: center;
     padding: 8px 6px;
     font-size: 12px;
+  }
+
+  .navDropdownMenu {
+    position: static;
+    min-width: 0;
+    width: 100%;
+    margin-top: 6px;
   }
 
   .heroActions {
