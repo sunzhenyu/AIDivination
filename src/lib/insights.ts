@@ -116,7 +116,7 @@ const _insights: Insight[] = [
         ]
       },
       zh: {
-        title: "职业解读：把"命盘感"转成成长叙事",
+        title: "职业解读：把「命盘感」转成成长叙事",
         description: "把抽象判断改写为优势、节奏与下一步动作，结果页才会更有价值。",
         tags: ["职业", "成长路径", "行动建议"],
         sections: [
@@ -180,7 +180,7 @@ const _insights: Insight[] = [
         ]
       },
       zh: {
-        title: "面相模式：从"判断"到"观察故事"",
+        title: "面相模式：从「判断」到「观察故事」",
         description: "用温和表达替代绝对结论，让面相结果更像自我观察工具。",
         tags: ["面相", "观察", "人格表达"],
         sections: [
@@ -244,7 +244,7 @@ const _insights: Insight[] = [
         ]
       },
       zh: {
-        title: "手相模式：把未来感转成"节奏语言"",
+        title: "手相模式：把未来感转成「节奏语言」",
         description: "手相最适合输出阶段节奏建议，而不是绝对吉凶判断。",
         tags: ["手相", "节奏", "阶段策略"],
         sections: [
