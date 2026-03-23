@@ -47,6 +47,7 @@ body {
     linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
   background-size: 40px 40px;
+  -webkit-mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.95), transparent 85%);
   mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.95), transparent 85%);
 }
 
@@ -128,6 +129,7 @@ body {
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: rgba(7, 17, 31, 0.78);
+  -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
   box-shadow: 0 18px 42px rgba(0, 0, 0, 0.24);
   z-index: 25;
@@ -304,6 +306,7 @@ button.navLink {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
   border: 1px solid var(--line);
   border-radius: 32px;
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   box-shadow: var(--shadow);
 }
@@ -376,6 +379,7 @@ button.navLink {
   max-width: 12ch;
   background: linear-gradient(135deg, #fff9e8 0%, #f8be6a 44%, #83e7d0 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
