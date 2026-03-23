@@ -57,7 +57,12 @@ export function SiteFooter() {
           </div>
         </div>
       </div>
-      <div className="footerBottom">{t.copyright}</div>
+      <div className="footerBottom">
+        <span>{t.copyright}</span>
+        <a href="https://www.tooljunction.io" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", marginLeft: "16px" }}>
+          <img src="https://ik.imagekit.io/or8e5hp54/tj/badge.svg" alt="Featured on ToolJunction" style={{ height: "28px" }} />
+        </a>
+      </div>
     </footer>
   );
 }
