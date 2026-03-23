@@ -24,6 +24,7 @@ body {
 
 body {
   font-family: "SF Pro Display", "Segoe UI", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  background-color: #06101d;
   background:
     radial-gradient(circle at top left, rgba(248, 190, 106, 0.16), transparent 32%),
     radial-gradient(circle at 85% 18%, rgba(103, 197, 255, 0.18), transparent 28%),
