@@ -109,6 +109,17 @@ export function HomePageClient() {
             <p>{t.home.dreamDesc}</p>
             <Link href="/dream" className="btn">{t.home.dreamCta}</Link>
           </article>
+          <article className="card">
+            <div className="cardHeader">
+              <span className="cardIcon">🎋</span>
+              <div>
+                <h3>{t.home.fortuneName}</h3>
+                <div className="cardTag">{t.home.fortuneTag}</div>
+              </div>
+            </div>
+            <p>{lang === "zh" ? "每日抽签获得佛家风格的运势解读与今日宜忌建议。" : "Draw a daily fortune stick and receive Buddhist-style guidance with practical advice."}</p>
+            <Link href="/fortune" className="btn">{t.home.fortuneCta}</Link>
+          </article>
         </div>
       </section>
 

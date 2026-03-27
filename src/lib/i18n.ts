@@ -7,7 +7,7 @@ export const copy = {
   en: {
     brand: "AI Divination",
     eyebrow: "AI Divination",
-    nav: { home: "Home", ai: "AI Divination", tarot: "Insight Cards", career: "Growth Path", face: "Personality Lens", palm: "Life Rhythm", dream: "Subconscious Signals", stories: "Story Library", insights: "Story Library" },
+    nav: { home: "Home", ai: "AI Divination", tarot: "Insight Cards", career: "Growth Path", face: "Personality Lens", palm: "Life Rhythm", dream: "Subconscious Signals", fortune: "Daily Fortune", stories: "Story Library", insights: "Story Library", daily: "Daily Reading" },
     common: {
       start: "Start",
       backHome: "Back to Home",
@@ -42,8 +42,10 @@ export const copy = {
       careerName: "Growth Path", careerTag: "AI career reading", careerCta: "Generate reading",
       faceName: "Personality Lens", faceTag: "AI face reading", faceCta: "Start reading",
       palmName: "Life Rhythm", palmTag: "AI palm reading", palmCta: "Read your palm",
-      dreamName: "Subconscious Signals", dreamTag: "AI dream interpretation", dreamCta: "Decode dream"
+      dreamName: "Subconscious Signals", dreamTag: "AI dream interpretation", dreamCta: "Decode dream",
+      fortuneName: "Daily Fortune", fortuneTag: "Daily fortune stick", fortuneCta: "Draw fortune"
     },
+    fortune: { title: "Daily Fortune", action: "Draw Fortune", transition: "Reading your fortune...", subtitle: "Daily fortune stick: draw a fortune and receive Buddhist-style guidance with practical advice for today.", drawGuidance: "How it works", drawGuidanceDesc: "Click the button to start the fortune wheel animation, then receive your fortune level and interpretation.", fortuneLevel: "Fortune Level", interpretation: "Interpretation", todayAdvice: "Today's Advice", fortuneLevels: { poor: "Lower Fortune", fair: "Middle Fortune", good: "Upper Fortune", excellent: "Supreme Fortune" } },
     career: { title: "Growth Path", name: "Name", date: "Start date", action: "Generate Reading", transition: "Mapping your growth trajectory...", subtitle: "AI career reading: translate work signals into growth rhythm, strengths, and practical next steps.", whatYouGet: "What you will get", whatYouGetDesc: "Your result includes key traits, 3-6 month trends, strengths, blind spots, and a matching historical archetype." },
     face: { title: "Personality Lens", action: "Analyze Profile", transition: "Decoding your personality cues...", subtitle: "AI face reading: upload a clear portrait to uncover personality tendencies and communication cues.", uploadGuidance: "Upload guidance", uploadGuidanceDesc: "Use natural light, a front-facing angle, and minimal occlusion for best results." },
     palm: { title: "Life Rhythm", action: "Analyze Rhythm", transition: "Reading your rhythm patterns...", subtitle: "AI palm reading: upload your palm photo to decode life, head, heart, and career line rhythms.", captureGuidance: "Capture guidance", captureGuidanceDesc: "Keep your palm open with clear lines and even lighting, avoiding glare and blur." },
@@ -53,6 +55,19 @@ export const copy = {
     stories: { title: "Story Library", subtitle: "Curated classic and mystical narratives with an AI Divination lens, turning story tension into practical reflection and action.", readStory: "Read Story", backToList: "Back to Story List", storyOpening: "Story Opening", themeTakeaway: "Theme Takeaway", source: "Source", perspective: " (AI Divination story perspective)", prevPage: "Previous", nextPage: "Next", pageOf: "Page", of: "/" },
     ui: { chooseImage: "Choose image", openCamera: "Open camera", switchCamera: "Switch camera", capture: "Capture", closeCamera: "Close camera", retake: "Retake", cameraError: "Unable to open camera. Check browser permissions.", generating: "Generating...", downloadImage: "Download Image", shareOnX: "Share on X", shareOnFacebook: "Share on Facebook", shareText: "I got my reading result on AI Divination. Check your own result." },
     labels: { historicalMatch: "Historical Match", matchReason: "Reason:", narrativeSummary: "Narrative Summary", careerResultTitle: "Career Reading Result", careerResultSubtitle: "A structured profile of your current momentum and practical next moves.", basicInfo: "Basic Information", careerKeywords: "Career Keywords", trends: "Trends", strengthsWeaknesses: "Strengths & Weaknesses", strengths: "Strengths:", weaknesses: "Weaknesses:", actionAdvice: "Action Advice", faceResultTitle: "Face Reading Result", faceResultSubtitle: "A light personality-oriented reading generated from visible features.", featureReading: "Feature Reading", forehead: "Forehead", eyes: "Eyes", nose: "Nose", mouth: "Mouth", chin: "Chin", palmResultTitle: "Palm Reading Result", palmResultSubtitle: "A phase-based palm reading to support your personal rhythm and planning.", palmLines: "Palm Lines", lifeLine: "Life Line", headLine: "Head Line", heartLine: "Heart Line", careerLine: "Career Line", careerCues: "Career Cues", futureRhythm: "Future Rhythm", advice: "Advice", futureTrends: "Future Rhythm", tarotResultTitle: "Tarot Reading Result", tarotResultSubtitle: "A structured phase reading based on your three-card spread.", tarotCards: "Cards", overview: "Overview", careerSection: "Career", wealth: "Wealth", relationship: "Relationship", predictions: "Predictions" },
+    daily: {
+      navLabel: "Daily Reading",
+      title: "Daily Reading",
+      solarDate: "Solar Date",
+      lunarDate: "Lunar Date",
+      yi: "Auspicious",
+      ji: "Inauspicious",
+      prose: "Today's Reading",
+      loading: "Generating reading...",
+      prevDay: "Previous",
+      nextDay: "Next",
+      backToday: "Today"
+    },
     footer: {
       tagline: "Reflective rituals and practical guidance, all in one place.",
       supportTitle: "Contact",
@@ -71,7 +86,7 @@ export const copy = {
   zh: {
     brand: "AI Divination",
     eyebrow: "AI 占卜",
-    nav: { home: "首页", ai: "AI占卜", tarot: "灵感卡图", career: "成长轨迹", face: "性格映像", palm: "人生节律", dream: "潜意识", stories: "故事", insights: "故事" },
+    nav: { home: "首页", ai: "AI占卜", tarot: "灵感卡图", career: "成长轨迹", face: "性格映像", palm: "人生节律", dream: "潜意识", fortune: "每日一签", stories: "故事", insights: "故事", daily: "每日一读" },
     common: {
       start: "开始",
       backHome: "返回首页",
@@ -106,8 +121,10 @@ export const copy = {
       careerName: "成长轨迹", careerTag: "AI 职业洞察", careerCta: "生成分析",
       faceName: "性格映像", faceTag: "AI 面相解读", faceCta: "开始识别",
       palmName: "人生节律", palmTag: "AI 手相解读", palmCta: "查看手相",
-      dreamName: "潜意识信号", dreamTag: "AI 梦境解析", dreamCta: "开始解梦"
+      dreamName: "潜意识信号", dreamTag: "AI 梦境解析", dreamCta: "开始解梦",
+      fortuneName: "每日一签", fortuneTag: "每日求签", fortuneCta: "抽签"
     },
+    fortune: { title: "每日一签", action: "开始抽签", transition: "正在解读签文...", subtitle: "每日求签：抽取一支灵签，获得佛家风格的签文评级与今日行动建议。", drawGuidance: "抽签说明", drawGuidanceDesc: "点击按钮启动签筒轮播动画，随后获得签文等级与解读内容。", fortuneLevel: "签文等级", interpretation: "签文解读", todayAdvice: "今日宜", fortuneLevels: { poor: "下签", fair: "中签", good: "上签", excellent: "上上签" } },
     tarot: { title: "灵感卡图", action: "生成解读", shuffle: "洗牌", reveal: "生成解读", transition: "正在解析卡图象征...", subtitle: "AI 塔罗解读：从大牌库随机抽取三张卡牌，逐张翻开并生成叙事建议。", flipRules: "翻牌规则", flipRulesDesc: "先点击「重新洗牌」，再翻开三张牌。三张都翻开后即可生成解读。", cardPrefix: "第", revealedPrefix: "已翻开" },
     career: { title: "成长轨迹", name: "姓名", date: "入职日期", action: "生成分析", transition: "正在计算成长轨迹...", subtitle: "AI 职业洞察：把职场信号转成成长节奏、优势画像与下一步行动。", whatYouGet: "你将获得", whatYouGetDesc: "结果会包含职业关键词、未来 3-6 个月趋势、优势短板，以及一位与你气质接近的历史人物。" },
     face: { title: "性格映像", action: "开始分析", transition: "正在解析性格线索...", subtitle: "AI 面相解读：上传清晰正脸，获得性格倾向与沟通风格线索。", uploadGuidance: "上传建议", uploadGuidanceDesc: "建议使用自然光、无遮挡、正面视角图片，以获得更稳定的分析结果。" },
@@ -117,6 +134,19 @@ export const copy = {
     stories: { title: "故事专栏", subtitle: "精选神秘与经典叙事，结合 AI 占卜视角，帮助你把故事情节转化为现实判断与行动。", readStory: "进入故事", backToList: "返回故事列表", storyOpening: "故事引子", themeTakeaway: "主题启示", source: "参考来源", perspective: "（AI占卜故事视角）", prevPage: "上一页", nextPage: "下一页", pageOf: "第", of: "/" },
     ui: { chooseImage: "选择图片", openCamera: "开启相机", switchCamera: "切换相机", capture: "拍照", closeCamera: "关闭相机", retake: "重新拍摄/选择", cameraError: "无法启动相机，请检查浏览器权限设置。", generating: "生成中...", downloadImage: "下载图片", shareOnX: "分享到 X", shareOnFacebook: "分享到 Facebook", shareText: "我在 AI Divination 的占卜结果，来看看你的解读。" },
     labels: { historicalMatch: "历史人物匹配", matchReason: "匹配理由：", narrativeSummary: "阶段故事线", careerResultTitle: "职业占卜结果", careerResultSubtitle: "用结构化方式呈现你的阶段趋势与行动建议。", basicInfo: "基础信息", careerKeywords: "职业关键词", trends: "阶段趋势", strengthsWeaknesses: "优劣势分析", strengths: "优势：", weaknesses: "短板：", actionAdvice: "行动建议", faceResultTitle: "面相占卜结果", faceResultSubtitle: "基于特征信息生成的轻量洞察，仅供自我观察与娱乐参考。", featureReading: "面部特征", forehead: "额头", eyes: "眼睛", nose: "鼻子", mouth: "嘴部", chin: "下巴", palmResultTitle: "手相占卜结果", palmResultSubtitle: "基于掌纹线索的阶段性参考，帮助你形成行动节奏。", palmLines: "掌纹解读", lifeLine: "生命线", headLine: "智慧线", heartLine: "感情线", careerLine: "事业线", careerCues: "职业提示", futureRhythm: "未来节奏", advice: "建议", futureTrends: "阶段趋势", tarotResultTitle: "塔罗牌占卜结果", tarotResultSubtitle: "基于三张牌的阶段性解读，供你参考与复盘。", tarotCards: "牌面信息", overview: "整体趋势", careerSection: "职业方向", wealth: "财务节奏", relationship: "关系互动", predictions: "近期预测" },
+    daily: {
+      navLabel: "每日一读",
+      title: "每日一读",
+      solarDate: "阳历",
+      lunarDate: "农历",
+      yi: "宜",
+      ji: "忌",
+      prose: "今日一读",
+      loading: "正在生成内容...",
+      prevDay: "前一天",
+      nextDay: "后一天",
+      backToday: "回到今天"
+    },
     footer: {
       tagline: "把仪式感探索与可执行建议整合在同一体验里。",
       supportTitle: "联系我们",
@@ -135,7 +165,7 @@ export const copy = {
   fr: {
     brand: "Divination IA",
     eyebrow: "Divination IA",
-    nav: { home: "Accueil", ai: "Divination IA", tarot: "Cartes Intuitives", career: "Trajectoire", face: "Profil Perso.", palm: "Rythme de Vie", dream: "Signaux Inconscients", stories: "Bibliothèque", insights: "Bibliothèque" },
+    nav: { home: "Accueil", ai: "Divination IA", tarot: "Cartes Intuitives", career: "Trajectoire", face: "Profil Perso.", palm: "Rythme de Vie", dream: "Signaux Inconscients", fortune: "Fortune Quotidienne", stories: "Bibliothèque", insights: "Bibliothèque", daily: "Lecture du Jour" },
     common: {
       start: "Commencer",
       backHome: "Retour à l'accueil",
@@ -170,8 +200,10 @@ export const copy = {
       careerName: "Trajectoire", careerTag: "Lecture IA carrière", careerCta: "Générer la lecture",
       faceName: "Profil de Personnalité", faceTag: "Lecture IA visage", faceCta: "Commencer",
       palmName: "Rythme de Vie", palmTag: "Lecture IA palmaire", palmCta: "Lire votre main",
-      dreamName: "Signaux Inconscients", dreamTag: "Interprétation IA des rêves", dreamCta: "Décoder le rêve"
+      dreamName: "Signaux Inconscients", dreamTag: "Interprétation IA des rêves", dreamCta: "Décoder le rêve",
+      fortuneName: "Fortune Quotidienne", fortuneTag: "Bâton de fortune quotidien", fortuneCta: "Tirer fortune"
     },
+    fortune: { title: "Fortune Quotidienne", action: "Tirer Fortune", transition: "Lecture de votre fortune...", subtitle: "Bâton de fortune quotidien : tirez une fortune et recevez des conseils de style bouddhiste avec des conseils pratiques pour aujourd'hui.", drawGuidance: "Comment ça marche", drawGuidanceDesc: "Cliquez sur le bouton pour démarrer l'animation de la roue de fortune, puis recevez votre niveau de fortune et votre interprétation.", fortuneLevel: "Niveau de Fortune", interpretation: "Interprétation", todayAdvice: "Conseil du Jour", fortuneLevels: { poor: "Fortune Inférieure", fair: "Fortune Moyenne", good: "Fortune Supérieure", excellent: "Fortune Suprême" } },
     tarot: { title: "Cartes Intuitives", action: "Générer la lecture", shuffle: "Mélanger", reveal: "Générer la lecture", transition: "Lecture de vos symboles...", subtitle: "Lecture IA tarot : révélez trois cartes tirées au hasard et transformez les symboles en conseils pratiques.", flipRules: "Règles de retournement", flipRulesDesc: "Mélangez d'abord, puis retournez les trois cartes. La lecture se débloque après toutes les révélations.", cardPrefix: "Carte", revealedPrefix: "Révélée" },
     career: { title: "Trajectoire de Croissance", name: "Prénom", date: "Date de début", action: "Générer la lecture", transition: "Cartographie de votre trajectoire...", subtitle: "Lecture IA carrière : traduisez les signaux professionnels en rythme de croissance, forces et prochaines étapes.", whatYouGet: "Ce que vous obtiendrez", whatYouGetDesc: "Votre résultat inclut des traits clés, des tendances sur 3-6 mois, des forces, des angles morts et un archétype historique correspondant." },
     face: { title: "Profil de Personnalité", action: "Analyser le profil", transition: "Décodage de votre personnalité...", subtitle: "Lecture IA visage : téléchargez un portrait clair pour découvrir les tendances de personnalité et les indices de communication.", uploadGuidance: "Conseils de téléchargement", uploadGuidanceDesc: "Utilisez une lumière naturelle, un angle de face et une occlusion minimale pour de meilleurs résultats." },
@@ -181,6 +213,19 @@ export const copy = {
     stories: { title: "Bibliothèque d'Histoires", subtitle: "Récits classiques et mystiques avec un regard IA, transformant la tension narrative en réflexion pratique.", readStory: "Lire l'histoire", backToList: "Retour à la liste", storyOpening: "Ouverture", themeTakeaway: "Leçon Principale", source: "Source", perspective: " (perspective IA Divination)", prevPage: "Précédent", nextPage: "Suivant", pageOf: "Page", of: "/" },
     ui: { chooseImage: "Choisir une image", openCamera: "Ouvrir la caméra", switchCamera: "Changer de caméra", capture: "Capturer", closeCamera: "Fermer la caméra", retake: "Reprendre", cameraError: "Impossible d'ouvrir la caméra. Vérifiez les autorisations du navigateur.", generating: "Génération...", downloadImage: "Télécharger l'image", shareOnX: "Partager sur X", shareOnFacebook: "Partager sur Facebook", shareText: "J'ai obtenu mon résultat de lecture sur AI Divination. Découvrez le vôtre." },
     labels: { historicalMatch: "Correspondance Historique", matchReason: "Raison :", narrativeSummary: "Résumé Narratif", careerResultTitle: "Résultat Carrière", careerResultSubtitle: "Un profil structuré de votre élan actuel et de vos prochaines étapes pratiques.", basicInfo: "Informations de Base", careerKeywords: "Mots-clés Carrière", trends: "Tendances", strengthsWeaknesses: "Forces & Faiblesses", strengths: "Forces :", weaknesses: "Faiblesses :", actionAdvice: "Conseils d'Action", faceResultTitle: "Résultat Visage", faceResultSubtitle: "Une lecture légère orientée personnalité générée à partir des traits visibles.", featureReading: "Lecture des Traits", forehead: "Front", eyes: "Yeux", nose: "Nez", mouth: "Bouche", chin: "Menton", palmResultTitle: "Résultat Palmaire", palmResultSubtitle: "Une lecture palmaire par phases pour soutenir votre rythme personnel.", palmLines: "Lignes de la Main", lifeLine: "Ligne de Vie", headLine: "Ligne de Tête", heartLine: "Ligne de Cœur", careerLine: "Ligne de Carrière", careerCues: "Indices Carrière", futureRhythm: "Rythme Futur", advice: "Conseils", futureTrends: "Tendances Futures", tarotResultTitle: "Résultat Tarot", tarotResultSubtitle: "Une lecture par phases basée sur votre tirage à trois cartes.", tarotCards: "Cartes", overview: "Vue d'ensemble", careerSection: "Carrière", wealth: "Finances", relationship: "Relations", predictions: "Prédictions" },
+    daily: {
+      navLabel: "Lecture du Jour",
+      title: "Lecture du Jour",
+      solarDate: "Date Solaire",
+      lunarDate: "Date Lunaire",
+      yi: "Favorable",
+      ji: "Défavorable",
+      prose: "Lecture du Jour",
+      loading: "Génération en cours...",
+      prevDay: "Précédent",
+      nextDay: "Suivant",
+      backToday: "Aujourd'hui"
+    },
     footer: {
       tagline: "Rituels de réflexion et conseils pratiques, au même endroit.",
       supportTitle: "Contact",
@@ -199,7 +244,7 @@ export const copy = {
   ja: {
     brand: "AI占い",
     eyebrow: "AI占い",
-    nav: { home: "ホーム", ai: "AI占い", tarot: "インサイトカード", career: "成長の軌跡", face: "パーソナリティ", palm: "人生のリズム", dream: "潜在意識", stories: "ストーリー", insights: "ストーリー" },
+    nav: { home: "ホーム", ai: "AI占い", tarot: "インサイトカード", career: "成長の軌跡", face: "パーソナリティ", palm: "人生のリズム", dream: "潜在意識", fortune: "今日の運勢", stories: "ストーリー", insights: "ストーリー", daily: "今日の読み物" },
     common: {
       start: "始める",
       backHome: "ホームに戻る",
@@ -234,8 +279,10 @@ export const copy = {
       careerName: "成長の軌跡", careerTag: "AIキャリアリーディング", careerCta: "リーディング生成",
       faceName: "パーソナリティレンズ", faceTag: "AI顔相リーディング", faceCta: "リーディング開始",
       palmName: "人生のリズム", palmTag: "AI手相リーディング", palmCta: "手相を読む",
-      dreamName: "潜在意識のシグナル", dreamTag: "AI夢解釈", dreamCta: "夢を解読"
+      dreamName: "潜在意識のシグナル", dreamTag: "AI夢解釈", dreamCta: "夢を解読",
+      fortuneName: "今日の運勢", fortuneTag: "毎日のおみくじ", fortuneCta: "おみくじを引く"
     },
+    fortune: { title: "今日の運勢", action: "おみくじを引く", transition: "運勢を読み取り中...", subtitle: "毎日のおみくじ：おみくじを引いて、仏教スタイルのガイダンスと今日の実践的なアドバイスを受け取ります。", drawGuidance: "使い方", drawGuidanceDesc: "ボタンをクリックして運勢ホイールアニメーションを開始し、運勢レベルと解釈を受け取ります。", fortuneLevel: "運勢レベル", interpretation: "解釈", todayAdvice: "今日のアドバイス", fortuneLevels: { poor: "凶", fair: "中吉", good: "吉", excellent: "大吉" } },
     tarot: { title: "インサイトカード", action: "リーディング生成", shuffle: "シャッフル", reveal: "リーディング生成", transition: "シンボルを読み解いています...", subtitle: "AIタロットリーディング：ランダムに引いた3枚のカードを公開し、シンボルを実践的なガイダンスに変換します。", flipRules: "めくりルール", flipRulesDesc: "まずシャッフルし、3枚すべてをめくってください。すべて公開後にリーディングが解放されます。", cardPrefix: "カード", revealedPrefix: "公開済み" },
     career: { title: "成長の軌跡", name: "お名前", date: "開始日", action: "リーディング生成", transition: "成長の軌跡をマッピング中...", subtitle: "AIキャリアリーディング：職場のシグナルを成長リズム・強み・次のステップに変換します。", whatYouGet: "得られること", whatYouGetDesc: "結果には主要な特性、3〜6ヶ月のトレンド、強み、盲点、そして対応する歴史的人物が含まれます。" },
     face: { title: "パーソナリティレンズ", action: "プロフィール分析", transition: "個性を解読中...", subtitle: "AI顔相リーディング：明確なポートレートをアップロードして、個性の傾向とコミュニケーションの手がかりを発見します。", uploadGuidance: "アップロードガイド", uploadGuidanceDesc: "最良の結果を得るために、自然光・正面アングル・遮蔽物なしの写真をご使用ください。" },
@@ -245,6 +292,19 @@ export const copy = {
     stories: { title: "ストーリーライブラリ", subtitle: "AI占いの視点で厳選されたクラシックと神秘的な物語。物語の緊張を実践的な内省に変えます。", readStory: "ストーリーを読む", backToList: "一覧に戻る", storyOpening: "ストーリーの始まり", themeTakeaway: "テーマの教訓", source: "出典", perspective: "（AI占いストーリー視点）", prevPage: "前へ", nextPage: "次へ", pageOf: "ページ", of: "/" },
     ui: { chooseImage: "画像を選択", openCamera: "カメラを開く", switchCamera: "カメラを切り替え", capture: "撮影", closeCamera: "カメラを閉じる", retake: "撮り直す", cameraError: "カメラを開けません。ブラウザの権限設定を確認してください。", generating: "生成中...", downloadImage: "画像をダウンロード", shareOnX: "Xでシェア", shareOnFacebook: "Facebookでシェア", shareText: "AI Divinationでリーディング結果を取得しました。あなたも試してみてください。" },
     labels: { historicalMatch: "歴史的人物マッチ", matchReason: "理由：", narrativeSummary: "ナラティブサマリー", careerResultTitle: "キャリアリーディング結果", careerResultSubtitle: "現在の勢いと実践的な次のステップの構造化プロフィール。", basicInfo: "基本情報", careerKeywords: "キャリアキーワード", trends: "トレンド", strengthsWeaknesses: "強み＆弱み", strengths: "強み：", weaknesses: "弱み：", actionAdvice: "行動アドバイス", faceResultTitle: "顔相リーディング結果", faceResultSubtitle: "目に見える特徴から生成された軽量な個性志向のリーディング。", featureReading: "特徴リーディング", forehead: "額", eyes: "目", nose: "鼻", mouth: "口", chin: "顎", palmResultTitle: "手相リーディング結果", palmResultSubtitle: "個人のリズムと計画をサポートするフェーズベースの手相リーディング。", palmLines: "手相の線", lifeLine: "生命線", headLine: "頭脳線", heartLine: "感情線", careerLine: "運命線", careerCues: "キャリアの手がかり", futureRhythm: "未来のリズム", advice: "アドバイス", futureTrends: "未来のリズム", tarotResultTitle: "タロットリーディング結果", tarotResultSubtitle: "3枚引きスプレッドに基づくフェーズリーディング。", tarotCards: "カード", overview: "概要", careerSection: "キャリア", wealth: "財運", relationship: "人間関係", predictions: "予測" },
+    daily: {
+      navLabel: "今日の読み物",
+      title: "今日の読み物",
+      solarDate: "新暦",
+      lunarDate: "旧暦",
+      yi: "吉",
+      ji: "凶",
+      prose: "今日の一文",
+      loading: "生成中...",
+      prevDay: "前の日",
+      nextDay: "次の日",
+      backToday: "今日へ"
+    },
     footer: {
       tagline: "内省のリチュアルと実践的なガイダンスを一か所に。",
       supportTitle: "お問い合わせ",
