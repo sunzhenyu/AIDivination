@@ -12,17 +12,24 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`
   },
   description:
-    "Explore AI tarot, career, face, and palm readings with story-based insights, multilingual support, and shareable guidance for reflection and better decisions.",
+    "Free AI-powered tarot card reading, career guidance, face reading, palm reading, and dream interpretation. Get instant personalized insights in English, Chinese, French, and Japanese.",
   keywords: [
     "AI divination",
-    "tarot reading",
-    "career guidance",
-    "face reading",
-    "palm reading",
-    "AI tarot",
-    "占卜",
-    "塔罗",
-    "职业分析"
+    "free tarot reading online",
+    "AI tarot card reading",
+    "career guidance AI",
+    "face reading online",
+    "palm reading AI",
+    "dream interpretation",
+    "daily fortune",
+    "AI占卜",
+    "在线塔罗牌",
+    "免费塔罗占卜",
+    "AI职业分析",
+    "面相分析",
+    "手相解读",
+    "解梦",
+    "每日运势"
   ],
   alternates: {
     canonical: "/",
@@ -34,9 +41,9 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: "AI Divination - Tarot, Career, Face & Palm Readings",
+    title: "AI Divination - Free Tarot, Career & Dream Readings",
     description:
-      "Explore AI tarot, career, face, and palm readings with story-based insights, multilingual support, and shareable guidance for reflection and better decisions.",
+      "Free AI-powered tarot card reading, career guidance, face reading, palm reading, and dream interpretation. Get instant personalized insights in English, Chinese, French, and Japanese.",
     url: absoluteUrl("/"),
     siteName: SITE_NAME,
     images: [{ url: SOCIAL_IMAGE_URL }],
@@ -44,11 +51,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Divination - Tarot, Career, Face & Palm Readings",
+    title: "AI Divination - Free Tarot, Career & Dream Readings",
     site: "@DanDan344479",
     images: [TWITTER_IMAGE_URL],
     description:
-      "Explore AI tarot, career, face, and palm readings with story-based insights, multilingual support, and shareable guidance for reflection and better decisions."
+      "Free AI-powered tarot card reading, career guidance, face reading, palm reading, and dream interpretation. Get instant personalized insights in English, Chinese, French, and Japanese."
   },
   icons: {
     icon: "/icon.svg",

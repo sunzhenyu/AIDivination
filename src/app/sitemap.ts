@@ -11,6 +11,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/face",
     "/palm",
     "/dream",
+    "/fortune",
+    "/daily",
     "/help",
     "/privacy",
     "/terms",
@@ -22,8 +24,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticEntries: MetadataRoute.Sitemap = staticRoutes.map((path) => ({
     url: `${SITE_URL}${path}`,
     lastModified: new Date(),
-    changeFrequency: path === "/" ? "daily" : "weekly",
-    priority: path === "/" ? 1 : 0.8
+    changeFrequency: path === "/" ? "daily" : path === "/daily" ? "daily" : "weekly",
+    priority: path === "/" ? 1 : path === "/daily" || path === "/fortune" ? 0.9 : 0.8
   }));
 
   const articleEntries: MetadataRoute.Sitemap = insights.map((item) => ({
