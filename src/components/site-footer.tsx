@@ -59,6 +59,9 @@ export function SiteFooter() {
       </div>
       <div className="footerBottom">
         <span>{t.copyright}</span>
+        <a href="https://www.producthunt.com/products/ai-divination?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-ai-divination" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", marginLeft: "16px" }}>
+          <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1110525&theme=light&t=1774786440755" alt="AI Divination - Free AI tarot, career &amp; dream readings | Product Hunt" width="250" height="54" />
+        </a>
         <a href="https://www.tooljunction.io" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", marginLeft: "16px" }}>
           <img src="https://ik.imagekit.io/or8e5hp54/tj/badge.svg" alt="Featured on ToolJunction" style={{ height: "28px" }} />
         </a>

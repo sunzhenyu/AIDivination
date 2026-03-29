@@ -39,7 +39,10 @@
       "Bash(node:*)",
       "Bash(git fetch:*)",
       "Bash(git merge:*)",
-      "Bash(jobs:*)"
+      "Bash(jobs:*)",
+      "Bash(ls ~/Downloads/ai-divination-*.png)",
+      "Bash(ls ~/Desktop/ai-divination-*.png)",
+      "Read(//Users/sunhaoyu/**)"
     ]
   }
 }
