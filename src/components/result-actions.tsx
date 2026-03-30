@@ -6,15 +6,24 @@ import { copy } from "@/lib/i18n";
 
 type Props = {
   targetRef: RefObject<HTMLElement | null>;
-  mode: "tarot" | "career" | "face" | "palm";
+  mode: "tarot" | "career" | "face" | "palm" | "dream";
 };
 
 export function ResultActions({ targetRef, mode }: Props) {
   const { lang } = useLang();
   const t = copy[lang];
   const [busy, setBusy] = useState(false);
+  const [copied, setCopied] = useState(false);
   const pageUrl = typeof window !== "undefined" ? window.location.href : "";
-  const shareText = t.ui.shareText;
+
+  const shareTextMap = {
+    tarot: t.ui.shareTextTarot,
+    career: t.ui.shareTextCareer,
+    face: t.ui.shareTextFace,
+    palm: t.ui.shareTextPalm,
+    dream: t.ui.shareTextDream
+  };
+  const shareText = shareTextMap[mode] || t.ui.shareText;
 
   async function downloadImage() {
     if (!targetRef.current || busy) return;
@@ -46,6 +55,16 @@ export function ResultActions({ targetRef, mode }: Props) {
     window.open(url, "_blank", "noopener,noreferrer");
   }
 
+  async function copyLink() {
+    try {
+      await navigator.clipboard.writeText(pageUrl);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error("Failed to copy:", err);
+    }
+  }
+
   return (
     <div className="resultActions">
       <button className="btn" type="button" onClick={downloadImage} disabled={busy}>
@@ -56,6 +75,9 @@ export function ResultActions({ targetRef, mode }: Props) {
       </button>
       <button className="btn secondary" type="button" onClick={shareOnFacebook}>
         {t.ui.shareOnFacebook}
+      </button>
+      <button className="btn secondary" type="button" onClick={copyLink}>
+        {copied ? t.ui.linkCopied : t.ui.copyLink}
       </button>
     </div>
   );
