@@ -36,8 +36,33 @@ export function LangProvider({ children }: { children: React.ReactNode }) {
   const setLang = (next: Lang) => {
     setLangState(next);
     setStoredLang(next);
+
+    // 更新URL路径以反映新语言
     if (typeof window !== "undefined") {
+      const currentPath = window.location.pathname;
+      const pathSegments = currentPath.split("/").filter(Boolean);
+      const firstSegment = pathSegments[0];
+
+      let newPath: string;
+      // 如果当前路径有语言前缀，替换它
+      if (firstSegment === "zh" || firstSegment === "fr" || firstSegment === "ja") {
+        const restPath = "/" + pathSegments.slice(1).join("/");
+        newPath = next === "en" ? restPath : `/${next}${restPath}`;
+      } else {
+        // 当前是英文路径，添加语言前缀（如果不是英文）
+        newPath = next === "en" ? currentPath : `/${next}${currentPath}`;
+      }
+
+      // 保留查询参数和hash
+      const search = window.location.search;
+      const hash = window.location.hash;
+      window.history.pushState({}, "", newPath + search + hash);
+
+      // 触发语言同步事件
       window.dispatchEvent(new CustomEvent<Lang>("aidivination:lang-sync", { detail: next }));
+
+      // 刷新页面以应用新语言
+      window.location.reload();
     }
   };
 

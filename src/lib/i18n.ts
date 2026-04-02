@@ -324,10 +324,24 @@ export const copy = {
 
 export function detectLang(): Lang {
   if (typeof window === "undefined") return DEFAULT_LANG;
+
+  // 1. 首先从URL路径中检测语言（优先级最高）
+  const pathname = window.location.pathname;
+  const pathSegments = pathname.split("/").filter(Boolean);
+  const firstSegment = pathSegments[0];
+  if (firstSegment === "zh" || firstSegment === "fr" || firstSegment === "ja") {
+    return firstSegment;
+  }
+
+  // 2. 然后从查询参数检测（向后兼容）
   const queryLang = new URLSearchParams(window.location.search).get("lang");
   if (queryLang === "zh" || queryLang === "en" || queryLang === "fr" || queryLang === "ja") return queryLang;
+
+  // 3. 最后从 localStorage 读取
   const stored = window.localStorage.getItem(STORAGE_KEY);
   if (stored === "zh" || stored === "en" || stored === "fr" || stored === "ja") return stored;
+
+  // 4. 默认英文
   return DEFAULT_LANG;
 }
 
