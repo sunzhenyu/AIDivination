@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { copy } from "@/lib/i18n";
+import { copy, getLocalizedPath } from "@/lib/i18n";
 import { useLang } from "@/lib/client";
 
 export function SiteFooter() {
@@ -46,14 +46,14 @@ export function SiteFooter() {
           </div>
           <div className="footerCol">
             <h4>{t.helpTitle}</h4>
-            <Link href="/help#getting-started" title={lang === "zh" ? "查看新手引导" : "View getting started guide"}>{t.guide}</Link>
-            <Link href="/help#faq" title={lang === "zh" ? "查看常见问题" : "Open help center FAQ"}>{t.faq}</Link>
-            <Link href="/stories" title={lang === "zh" ? "浏览故事专栏" : "Browse story library"}>{t.articles}</Link>
+            <Link href={getLocalizedPath("/help", lang) + "#getting-started"} title={lang === "zh" ? "查看新手引导" : "View getting started guide"}>{t.guide}</Link>
+            <Link href={getLocalizedPath("/help", lang) + "#faq"} title={lang === "zh" ? "查看常见问题" : "Open help center FAQ"}>{t.faq}</Link>
+            <Link href={getLocalizedPath("/stories", lang)} title={lang === "zh" ? "浏览故事专栏" : "Browse story library"}>{t.articles}</Link>
           </div>
           <div className="footerCol">
             <h4>{t.legalTitle}</h4>
-            <Link href="/privacy" title={lang === "zh" ? "查看隐私政策" : "View privacy policy"}>{t.privacy}</Link>
-            <Link href="/terms" title={lang === "zh" ? "查看服务条款" : "View terms of service"}>{t.terms}</Link>
+            <Link href={getLocalizedPath("/privacy", lang)} title={lang === "zh" ? "查看隐私政策" : "View privacy policy"}>{t.privacy}</Link>
+            <Link href={getLocalizedPath("/terms", lang)} title={lang === "zh" ? "查看服务条款" : "View terms of service"}>{t.terms}</Link>
           </div>
         </div>
       </div>

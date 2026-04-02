@@ -42,7 +42,8 @@
       "Bash(jobs:*)",
       "Bash(ls ~/Downloads/ai-divination-*.png)",
       "Bash(ls ~/Desktop/ai-divination-*.png)",
-      "Read(//Users/sunhaoyu/**)"
+      "Read(//Users/sunhaoyu/**)",
+      "Bash(grep:*)"
     ]
   }
 }
