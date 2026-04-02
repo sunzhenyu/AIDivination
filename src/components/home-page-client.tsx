@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { TopNav } from "@/components/top-nav";
 import { useLang } from "@/lib/client";
-import { copy } from "@/lib/i18n";
+import { copy, getLocalizedPath } from "@/lib/i18n";
 import { stories } from "@/lib/stories";
 
 export function HomePageClient() {
@@ -25,7 +25,7 @@ export function HomePageClient() {
           <h1 className="title">{t.home.heroTitle}</h1>
           <p className="subtitle">{t.home.subtitle}</p>
           <div className="heroActions">
-            <Link href="/career" title={t.career.title} className="btn primary">{t.common.start}</Link>
+            <Link href={getLocalizedPath("/career", lang)} title={t.career.title} className="btn primary">{t.common.start}</Link>
             <a href="#modes" className="btn secondary">{t.home.exploreAll}</a>
           </div>
           <div className="heroBadges">
@@ -63,7 +63,7 @@ export function HomePageClient() {
               </div>
             </div>
             <p>{t.home.tarotDesc}</p>
-            <Link href="/tarot" className="btn">{t.home.tarotCta}</Link>
+            <Link href={getLocalizedPath("/tarot", lang)} className="btn">{t.home.tarotCta}</Link>
           </article>
           <article className="card">
             <div className="cardHeader">
@@ -74,7 +74,7 @@ export function HomePageClient() {
               </div>
             </div>
             <p>{t.home.careerDesc}</p>
-            <Link href="/career" className="btn">{t.home.careerCta}</Link>
+            <Link href={getLocalizedPath("/career", lang)} className="btn">{t.home.careerCta}</Link>
           </article>
           <article className="card">
             <div className="cardHeader">
@@ -85,7 +85,7 @@ export function HomePageClient() {
               </div>
             </div>
             <p>{t.home.faceDesc}</p>
-            <Link href="/face" className="btn">{t.home.faceCta}</Link>
+            <Link href={getLocalizedPath("/face", lang)} className="btn">{t.home.faceCta}</Link>
           </article>
           <article className="card">
             <div className="cardHeader">
@@ -96,7 +96,7 @@ export function HomePageClient() {
               </div>
             </div>
             <p>{t.home.palmDesc}</p>
-            <Link href="/palm" className="btn">{t.home.palmCta}</Link>
+            <Link href={getLocalizedPath("/palm", lang)} className="btn">{t.home.palmCta}</Link>
           </article>
           <article className="card">
             <div className="cardHeader">
@@ -107,7 +107,7 @@ export function HomePageClient() {
               </div>
             </div>
             <p>{t.home.dreamDesc}</p>
-            <Link href="/dream" className="btn">{t.home.dreamCta}</Link>
+            <Link href={getLocalizedPath("/dream", lang)} className="btn">{t.home.dreamCta}</Link>
           </article>
           <article className="card">
             <div className="cardHeader">
@@ -118,7 +118,7 @@ export function HomePageClient() {
               </div>
             </div>
             <p>{lang === "zh" ? "每日抽签获得佛家风格的运势解读与今日宜忌建议。" : "Draw a daily fortune stick and receive Buddhist-style guidance with practical advice."}</p>
-            <Link href="/fortune" className="btn">{t.home.fortuneCta}</Link>
+            <Link href={getLocalizedPath("/fortune", lang)} className="btn">{t.home.fortuneCta}</Link>
           </article>
         </div>
       </section>
@@ -135,7 +135,7 @@ export function HomePageClient() {
               <article key={story.slug} className="storyMiniCard">
                 <h3>{content.title}</h3>
                 <p>{content.teaser}</p>
-                <Link href={`/stories/${story.slug}`} className="storyMiniLink">
+                <Link href={getLocalizedPath(`/stories/${story.slug}`, lang)} className="storyMiniLink">
                   {t.home.storyRead}
                 </Link>
               </article>
@@ -143,7 +143,7 @@ export function HomePageClient() {
           })}
         </div>
         <div className="heroActions" style={{ marginTop: 0 }}>
-          <Link href="/stories" className="btn primary">{t.home.storyBrowse}</Link>
+          <Link href={getLocalizedPath("/stories", lang)} className="btn primary">{t.home.storyBrowse}</Link>
         </div>
       </section>
     </main>

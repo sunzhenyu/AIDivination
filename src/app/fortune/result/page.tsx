@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { TopNav } from "@/components/top-nav";
-import { copy } from "@/lib/i18n";
+import { copy, getLocalizedPath } from "@/lib/i18n";
 import { useLang, readSession } from "@/lib/client";
 
 type FortuneResult = {
@@ -32,7 +32,7 @@ export default function FortuneResultPage() {
         <TopNav active="fortune" />
         <section className="panel sectionBlock stack">
           <p className="muted">{t.common.noData}</p>
-          <Link href="/fortune" className="btn secondary">{t.common.backHome}</Link>
+          <Link href={getLocalizedPath("/fortune", lang)} className="btn secondary">{t.common.backHome}</Link>
         </section>
       </main>
     );

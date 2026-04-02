@@ -349,3 +349,11 @@ export function setStoredLang(lang: Lang) {
   if (typeof window === "undefined") return;
   window.localStorage.setItem(STORAGE_KEY, lang);
 }
+
+// 生成带语言前缀的路径
+export function getLocalizedPath(path: string, lang: Lang): string {
+  // 英文不需要前缀
+  if (lang === "en") return path;
+  // 其他语言添加前缀
+  return `/${lang}${path}`;
+}
