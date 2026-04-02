@@ -19,35 +19,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/privacy",
     "/terms",
     "/stories",
-    "/insights",
-    "/llms.txt"
+    "/insights"
   ];
 
   const entries: MetadataRoute.Sitemap = [];
 
   // 为每个静态路由生成所有语言版本
   for (const route of staticRoutes) {
-    for (const locale of locales) {
-      const isEnglish = locale === "en";
-      const path = isEnglish ? route : `/${locale}${route}`;
-
-      // 构建 alternates 对象
-      const languages: Record<string, string> = {};
-      for (const altLocale of locales) {
-        const altPath = altLocale === "en" ? route : `/${altLocale}${route}`;
-        languages[altLocale] = `${SITE_URL}${altPath}`;
-      }
-
-      entries.push({
-        url: `${SITE_URL}${path}`,
-        lastModified: new Date(),
-        changeFrequency: route === "/" ? "daily" : route === "/daily" ? "daily" : "weekly",
-        priority: route === "/" ? 1 : route === "/daily" || route === "/fortune" ? 0.9 : 0.8,
-        alternates: {
-          languages
-        }
-      });
+    // 构建所有语言的 alternates
+    const languages: Record<string, string> = {};
+    for (const altLocale of locales) {
+      const altPath = altLocale === "en" ? route : `/${altLocale}${route}`;
+      languages[altLocale] = `${SITE_URL}${altPath}`;
     }
+    // 添加 x-default 指向英文版本
+    languages["x-default"] = `${SITE_URL}${route}`;
+
+    // 只为英文版本创建一个条目，包含所有语言的 alternates
+    entries.push({
+      url: `${SITE_URL}${route}`,
+      lastModified: new Date(),
+      changeFrequency: route === "/" ? "daily" : route === "/daily" ? "daily" : "weekly",
+      priority: route === "/" ? 1 : route === "/daily" || route === "/fortune" ? 0.9 : 0.8,
+      alternates: {
+        languages
+      }
+    });
   }
 
   // 文章和故事（仅英文）
